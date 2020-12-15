@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Notfound from './components/Notfound';
 import HomeContainer from './containers/HomeContainer';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
 import Search from './components/Search/Search';
 
