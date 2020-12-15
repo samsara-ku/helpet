@@ -1,0 +1,25 @@
+.layout1 {
+  display: flex;
+  padding: 40px;
+  gap: 20px;
+  max-width: 1447px;
+  justify-content: center;
+  margin: auto;
+}
+
+.side-content__card hr {
+  margin: 20px 0;
+}
+
+.layout1 > div {
+  display: flex;
+  justify-content: center;
+}
+
+.layout1__main {
+  flex-basis: 66%;
+}
+
+.layout1__side {
+  flex-basis: 34%;
+}
