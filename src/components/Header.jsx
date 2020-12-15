@@ -1,4 +1,4 @@
-import './Header.css';
+import './Header.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -9,30 +9,30 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 function Header() {
   return (
     <div className="header">
-      <div className="header__left">
+      <div className="header__col">
         <Link to="/">
-          <span className="header__link">홈</span>
+          <div className="header__item">홈</div>
         </Link>
         <Link to="/">
-          <span className="header__link">크리에이터즈</span>
+          <div className="header__item">크리에이터즈</div>
         </Link>
         <Link to="/">
-          <span className="header__link">스토어</span>
+          <div className="header__item">스토어</div>
         </Link>
       </div>
 
-      <div className="header__right">
+      <div className="header__col">
         <Link to="/">
-          <FacebookIcon />
+          <FacebookIcon className="header__item"/>
         </Link>
         <Link to="/">
-          <YouTubeIcon />
+          <YouTubeIcon className="header__item"/>
         </Link>
         <Link to="/">
-          <InstagramIcon />
+          <InstagramIcon className="header__item"/>
         </Link>
         <Link to="/">
-          <ShopIcon />
+          <ShopIcon className="header__item"/>
         </Link>
       </div>
     </div>
