@@ -10,10 +10,10 @@ function Footer() {
       </div>
       <div className="footer__row">
         <div className="footer__col">
-          <Link>이용약관</Link>
+          <Link to="/">이용약관</Link>
         </div>
         <div className="footer__col">
-          <Link>개인정보처리방침</Link>
+          <Link to="/">개인정보처리방침</Link>
         </div>
       </div>
     </div>

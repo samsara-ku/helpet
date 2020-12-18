@@ -37,8 +37,8 @@ function Article() {
       </div>
 
       <div className="article__tags">
-        {['강아지 산책', '강아지 주인', '강아지 행동'].map((e) => (
-          <Link>
+        {['강아지 산책', '강아지 주인', '강아지 행동'].map(e => (
+          <Link to="/">
             <span className="article__tag boder">{e}</span>
           </Link>
         ))}
