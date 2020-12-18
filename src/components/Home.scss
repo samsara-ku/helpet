@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
+  padding: 0 150px;
 
   &__logo {
     svg {
@@ -14,6 +14,7 @@
 
   &__search-area {
     width: 600px;
+    margin-bottom: 100px;
   }
 
   &__content {
@@ -21,7 +22,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0;
+    margin-bottom: 100px;
+    gap: 35px;
 
     &__grid {
       display: flex;
@@ -43,7 +45,20 @@
     }
 
     &__title {
-      margin: 15px;
+      position: relative;
+      font-size: 25px;
+      font-weight: 800;
+      padding-bottom: 4px;
+
+      &::after {
+        content: '';
+        position: relative;
+        display: block;
+        margin: auto;
+        padding: 0 0 8px;
+        width: 70%;
+        border-bottom: 2px solid #71a9f2;
+      }
     }
 
     &__card {

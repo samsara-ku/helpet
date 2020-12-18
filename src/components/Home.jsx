@@ -53,7 +53,37 @@ function Home() {
         <SearchForm />
       </div>
       <div className="home__content">
-        <h3 className="home__content__title">인기 콘텐츠</h3>
+        <div className="home__content__title">인기 콘텐츠</div>
+        <div className="home__content__grid">
+          <ChevronLeftIcon onClick={e => handleClick(-1)} />
+          {iter.map(e => (
+            <Link to="/article">
+              <div className="home__content__card">
+                <img src="https://via.placeholder.com/200x200?text=$" alt="" />
+                <div>{mockData[e].title}</div>
+              </div>
+            </Link>
+          ))}
+          <ChevronRightIcon onClick={e => handleClick(+1)} />
+        </div>
+      </div>
+      <div className="home__content">
+        <div className="home__content__title">인기 콘텐츠</div>
+        <div className="home__content__grid">
+          <ChevronLeftIcon onClick={e => handleClick(-1)} />
+          {iter.map(e => (
+            <Link to="/article">
+              <div className="home__content__card">
+                <img src="https://via.placeholder.com/200x200?text=$" alt="" />
+                <div>{mockData[e].title}</div>
+              </div>
+            </Link>
+          ))}
+          <ChevronRightIcon onClick={e => handleClick(+1)} />
+        </div>
+      </div>
+      <div className="home__content">
+        <div className="home__content__title">인기 콘텐츠</div>
         <div className="home__content__grid">
           <ChevronLeftIcon onClick={e => handleClick(-1)} />
           {iter.map(e => (

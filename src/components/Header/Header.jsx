@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
-import ShopIcon from '@material-ui/icons/Shop';
+import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
 function Header() {
@@ -54,7 +54,7 @@ function Header() {
             <InstagramIcon className="header__item" />
           </Link>
           <Link to="/">
-            <ShopIcon className="header__item" />
+            <TwitterIcon className="header__item" />
           </Link>
         </div>
       </div>
