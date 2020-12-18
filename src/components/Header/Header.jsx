@@ -21,11 +21,11 @@ function Header() {
   };
 
   useEffect(() => {
-    const throttledScroll = _.throttle(handleScroll, 500);
-    window.addEventListener('scroll', throttledScroll);
+    const debouncedScroll = _.debounce(handleScroll, 100);
+    window.addEventListener('scroll', debouncedScroll);
 
     return () => {
-      window.removeEventListener('scroll', throttledScroll);
+      window.removeEventListener('scroll', debouncedScroll);
     };
   }, [pageY]);
 
