@@ -77,10 +77,16 @@
 
       div {
         padding: 5px;
+        height: 50px;
         font-size: small;
         font-weight: bold;
         border: 1px solid lightgray;
         border-top: none;
+        transition: color 0.5s ease;
+
+        &:hover {
+          color: #71a9f2;
+        }
       }
     }
 
