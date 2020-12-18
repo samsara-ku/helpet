@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import './Layout1.css';
 import React from 'react';
 

@@ -8,9 +8,7 @@ function Article() {
     <div className="article border">
       <div className="article__breadcrumb">
         <HomeIcon />
-        <span>
-          홈/강아지 연구소/강아지 행동/강아지 보호자를 화나게 하는 말 5가지
-        </span>
+        <span>홈/강아지 연구소/강아지 행동/강아지 보호자를 화나게 하는 말 5가지</span>
       </div>
 
       <div className="article__title">
@@ -37,7 +35,7 @@ function Article() {
       </div>
 
       <div className="article__tags">
-        {['강아지 산책', '강아지 주인', '강아지 행동'].map(e => (
+        {['강아지 산책', '강아지 주인', '강아지 행동'].map((e) => (
           <Link to="/">
             <span className="article__tag boder">{e}</span>
           </Link>

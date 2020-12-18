@@ -19,10 +19,7 @@ function Home() {
         <div className="home__contnet__grid">
           {[1, 2, 3, 4, 5, 6].map((e) => (
             <div className="home__content__card border">
-              <img
-                src={`https://via.placeholder.com/200x200?text=${e}`}
-                alt=""
-              />
+              <img src={`https://via.placeholder.com/200x200?text=${e}`} alt="" />
               <span>안녕{e}</span>
             </div>
           ))}
@@ -34,10 +31,7 @@ function Home() {
         <div className="home__contnet__grid">
           {[1, 2, 3, 4, 5, 6].map((e) => (
             <div className="home__content__card border">
-              <img
-                src={`https://via.placeholder.com/200x200?text=${e}`}
-                alt=""
-              />
+              <img src={`https://via.placeholder.com/200x200?text=${e}`} alt="" />
               <span>안녕{e}</span>
             </div>
           ))}
@@ -49,10 +43,7 @@ function Home() {
         <div className="home__contnet__grid">
           {[1, 2, 3, 4, 5, 6].map((e) => (
             <div className="home__content__card border">
-              <img
-                src={`https://via.placeholder.com/200x200?text=${e}`}
-                alt=""
-              />
+              <img src={`https://via.placeholder.com/200x200?text=${e}`} alt="" />
               <span>안녕{e}</span>
             </div>
           ))}
