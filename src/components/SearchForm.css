@@ -13,8 +13,8 @@
   height: 45px;
   padding: 10px;
   padding-left: 31px;
-
   background-color: transparent;
+  overflow: hidden;
 }
 
 .search-form button {
