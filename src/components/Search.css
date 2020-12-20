@@ -55,4 +55,5 @@
   backdrop-filter: blur(3px);
   z-index: 9;
   opacity: 0;
+  display: none;
 }

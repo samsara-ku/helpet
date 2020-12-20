@@ -26,7 +26,7 @@ function Search() {
     if (isHistoryVisible) {
       tl.fromTo(
         backgroundRef.current,
-        { opacity: 0 },
+        { opacity: 0, display: 'block' },
         {
           opacity: 1,
           duration: 0.7,
@@ -47,7 +47,7 @@ function Search() {
         opacity: 0,
         duration: 0.7,
         ease: Power3.easeOut,
-        onComplete: () => {},
+        display: 'none',
       }).to(
         historyRef.current,
 
@@ -59,6 +59,9 @@ function Search() {
         '-=0.5'
       );
     }
+    return () => {
+      tl.clear();
+    };
   }, [isHistoryVisible]);
 
   const onFocusInput = () => {
