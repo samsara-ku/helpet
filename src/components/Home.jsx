@@ -1,10 +1,8 @@
 import './Home.scss';
 import React, { useState } from 'react';
 import GradeIcon from '@material-ui/icons/Grade';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { Link } from 'react-router-dom';
-import SearchForm from './SearchForm';
+import Search from './Search';
 
 function Home() {
   const mockData = [
@@ -44,12 +42,12 @@ function Home() {
         <GradeIcon />
       </div>
       <div className="home__search-area">
-        <SearchForm />
+        <Search />
       </div>
       <div className="home__content">
         <div className="home__content__title">인기 콘텐츠</div>
         <div className="home__content__grid">
-          {mockData.map(e => (
+          {mockData.map((e) => (
             <div>{e.title}</div>
           ))}
         </div>
