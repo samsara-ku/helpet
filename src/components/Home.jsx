@@ -38,12 +38,6 @@ function Home() {
     },
   ];
 
-  const [iter, setIter] = useState([0, 1, 2]);
-
-  const handleClick = e => {
-    setIter(iter.map(elem => (elem + e + mockData.length) % mockData.length));
-  };
-
   return (
     <div className="home">
       <div className="home__logo">
@@ -55,47 +49,18 @@ function Home() {
       <div className="home__content">
         <div className="home__content__title">인기 콘텐츠</div>
         <div className="home__content__grid">
-          <ChevronLeftIcon onClick={e => handleClick(-1)} />
-          {iter.map(e => (
-            <Link to="/article">
-              <div className="home__content__card">
-                <img src="https://via.placeholder.com/200x200?text=$" alt="" />
-                <div>{mockData[e].title}</div>
-              </div>
-            </Link>
+          {mockData.map(e => (
+            <div>{e.title}</div>
           ))}
-          <ChevronRightIcon onClick={e => handleClick(+1)} />
         </div>
       </div>
       <div className="home__content">
-        <div className="home__content__title">인기 콘텐츠</div>
-        <div className="home__content__grid">
-          <ChevronLeftIcon onClick={e => handleClick(-1)} />
-          {iter.map(e => (
-            <Link to="/article">
-              <div className="home__content__card">
-                <img src="https://via.placeholder.com/200x200?text=$" alt="" />
-                <div>{mockData[e].title}</div>
-              </div>
-            </Link>
-          ))}
-          <ChevronRightIcon onClick={e => handleClick(+1)} />
-        </div>
+        <div className="home__content__title">요즘에 핫한 정보</div>
+        <div className="home__content__grid">HI</div>
       </div>
       <div className="home__content">
-        <div className="home__content__title">인기 콘텐츠</div>
-        <div className="home__content__grid">
-          <ChevronLeftIcon onClick={e => handleClick(-1)} />
-          {iter.map(e => (
-            <Link to="/article">
-              <div className="home__content__card">
-                <img src="https://via.placeholder.com/200x200?text=$" alt="" />
-                <div>{mockData[e].title}</div>
-              </div>
-            </Link>
-          ))}
-          <ChevronRightIcon onClick={e => handleClick(+1)} />
-        </div>
+        <div className="home__content__title">또 다른 정보</div>
+        <div className="home__content__grid">HI</div>
       </div>
     </div>
   );
