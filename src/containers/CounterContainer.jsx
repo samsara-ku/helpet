@@ -8,9 +8,7 @@ const CounterContainer = () => {
 
   const { decrease, increase } = CounterActions();
 
-  return (
-    <Counter number={counter} onIncrease={increase} onDecrease={decrease} />
-  );
+  return <Counter number={counter} onIncrease={increase} onDecrease={decrease} />;
 };
 
 export default CounterContainer;

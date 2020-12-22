@@ -1,0 +1,56 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 0 150px;
+
+  &__logo {
+    svg {
+      font-size: 50px;
+      margin: 20px 0;
+    }
+  }
+
+  &__search-area {
+    width: 600px;
+    margin-bottom: 100px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 100px;
+    gap: 35px;
+
+    &__grid {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+
+      svg {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          color: white;
+          background-color: lightgray;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 25px;
+      font-weight: 800;
+      padding-bottom: 4px;
+    }
+  }
+}

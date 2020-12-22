@@ -9,7 +9,7 @@
 }
 
 .article__meta__date::before {
-  content: "\2022";
+  content: '\2022';
   color: #ccc;
   margin: 0 3px 0 5px;
   display: inline-block;
@@ -38,7 +38,7 @@
 }
 
 .article__tag::before {
-  content: "#";
+  content: '#';
   margin: 0 3px 0 5px;
   display: inline-block;
 }
