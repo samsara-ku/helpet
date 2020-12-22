@@ -85,13 +85,13 @@ function Search() {
 
           <div className="search__history" ref={historyRef}>
             <div className="search__history__words">
-              {[1123213, 111111, 3123121312].map((e) => (
+              {[1123213, 111111, 3123121312].map(e => (
                 <div key={e} className="search__history__word">
                   <QueryBuilderIcon />
                   <span>{e}</span>
                 </div>
               ))}
-              {[1, 2, 3].map((e) => (
+              {[1, 2, 3].map(e => (
                 <div key={e} className="search__history__word">
                   <SearchIcon />
                   <span>{e}</span>

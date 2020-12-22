@@ -47,7 +47,7 @@ function Home() {
       <div className="home__content">
         <div className="home__content__title">인기 콘텐츠</div>
         <div className="home__content__grid">
-          {mockData.map((e) => (
+          {mockData.map(e => (
             <div>{e.title}</div>
           ))}
         </div>

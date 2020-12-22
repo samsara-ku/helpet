@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import './Header.scss';
 import _ from 'lodash';
 import React, { useState, useEffect } from 'react';
