@@ -14,9 +14,9 @@
   flex-direction: column;
   gap: 5px;
   width: 100%;
-
-  left: 0px;
-  top: 67px;
+  left: -2px;
+  top: 43px;
+  padding-top: 10px;
 }
 
 .search__history__words {
@@ -30,7 +30,6 @@
 
 .search__history__word {
   width: 100%;
-  background-color: red;
   display: flex;
   align-items: center;
 }
