@@ -1,7 +1,7 @@
 import React from 'react';
-import Article from '../components/Article';
-import Layout1 from '../components/Layout1';
-import SideContent from '../components/SideContent';
+import Article from '../components/Information/Article';
+import Layout1 from '../components/Information/Layout1';
+import SideContent from '../components/Information/SideContent';
 
 const ArticlePageContainer = () => {
   console.log(123);

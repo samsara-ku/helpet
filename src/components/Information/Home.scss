@@ -27,26 +27,6 @@
     margin-bottom: 100px;
     gap: 35px;
 
-    &__grid {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
-
-      svg {
-        width: 50px;
-        height: 50px;
-        border-radius: 100%;
-        cursor: pointer;
-        transition: all 0.2s ease;
-
-        &:hover {
-          color: white;
-          background-color: lightgray;
-        }
-      }
-    }
-
     &__title {
       font-size: 25px;
       font-weight: 800;

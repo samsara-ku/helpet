@@ -1,4 +1,4 @@
-import './Article.css';
+import './Article.scss';
 import React from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';

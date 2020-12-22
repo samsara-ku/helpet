@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Notfound from './components/Notfound';
+import Header from './components/Global/Header/Header';
+import Notfound from './components/Information/Notfound';
 import HomeContainer from './containers/HomeContainer';
-import Footer from './components/Footer/Footer';
+import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
-import Search from './components/Search/Search';
+import Search from './components/Information/Search';
 
 function App() {
   return (

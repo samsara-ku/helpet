@@ -1,5 +1,5 @@
 import React from 'react';
-import Counter from '../components/Counter';
+import Counter from '../components/Information/Counter';
 import { CounterActions } from '../hooks/useMyActions';
 import { useCounter } from '../hooks/useMyState';
 
