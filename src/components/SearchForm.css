@@ -2,9 +2,15 @@
   position: relative;
   display: flex;
   align-items: center;
+<<<<<<< HEAD
   border: solid #ffcd00 2px;
   border-radius: 6px;
   width: 100%;
+=======
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+>>>>>>> [feature/2] 코드 주석제거 및 공백라인 제거 #2
 }
 
 .search-form input {
