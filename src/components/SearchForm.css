@@ -2,9 +2,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  border: solid #ffcd00 2px;
-  border-radius: 6px;
   width: 100%;
+  background-color: white;
+  justify-content: space-between;
 }
 
 .search-form input {
@@ -13,8 +13,8 @@
   height: 45px;
   padding: 10px;
   padding-left: 31px;
-
   background-color: transparent;
+  overflow: hidden;
 }
 
 .search-form button {

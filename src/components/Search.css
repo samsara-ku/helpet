@@ -1,36 +1,57 @@
 .search {
   padding: 20px;
+  position: relative;
+}
+
+.search__theme {
+  border: solid #ffcd00 2px;
+  border-radius: 6px;
   display: flex;
   position: relative;
-  display: flex;
   flex-direction: column;
-  max-width: 600px;
   margin: auto;
+  z-index: 10;
 }
 
 .search__history {
+  border: solid #ffcd00;
+  border-radius: 0 0 6px 6px;
+  border-width: 0 2px 2px 2px;
   position: absolute;
   display: flex;
   flex-direction: column;
   gap: 5px;
   width: 100%;
-
-  left: 0px;
-  top: 67px;
+  left: -2px;
+  top: 45px;
+  background-color: white;
+  height: 0px;
+  opacity: 0;
+  box-sizing: content-box;
 }
 
 .search__history__words {
-  padding: 0 26px;
   display: flex;
-
   flex-direction: column;
   gap: 5px;
-  width: 100%;
+  padding: 0 10px;
+  height: 0;
 }
 
 .search__history__word {
-  width: 100%;
-  background-color: red;
   display: flex;
   align-items: center;
+}
+
+.search__background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.384);
+  backdrop-filter: blur(3px);
+  z-index: 9;
+  opacity: 0;
+  display: none;
 }
