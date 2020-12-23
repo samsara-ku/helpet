@@ -5,21 +5,17 @@
   max-width: 1447px;
   justify-content: center;
   margin: auto;
-}
 
-.side-content__card hr {
-  margin: 20px 0;
-}
+  > div {
+    display: flex;
+    justify-content: center;
+  }
 
-.layout1 > div {
-  display: flex;
-  justify-content: center;
-}
+  &__main {
+    flex-basis: 66%;
+  }
 
-.layout1__main {
-  flex-basis: 66%;
-}
-
-.layout1__side {
-  flex-basis: 34%;
+  &__side {
+    flex-basis: 34%;
+  }
 }

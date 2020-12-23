@@ -5,23 +5,23 @@
   width: 100%;
   background-color: white;
   justify-content: space-between;
-}
 
-.search-form input {
-  border: none;
-  flex: 1;
-  height: 45px;
-  padding: 10px;
-  padding-left: 31px;
-  background-color: transparent;
-  overflow: hidden;
-}
+  input {
+    border: none;
+    flex: 1;
+    height: 45px;
+    padding: 10px;
+    padding-left: 31px;
+    background-color: transparent;
+    overflow: hidden;
+  }
 
-.search-form button {
-  background-color: #ffcd00;
-  padding: 5px;
-}
+  button {
+    background-color: #ffcd00;
+    padding: 5px;
+  }
 
-.search-form button svg {
-  font-size: xx-large;
+  button svg {
+    font-size: xx-large;
+  }
 }
