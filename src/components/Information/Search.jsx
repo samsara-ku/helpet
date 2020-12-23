@@ -1,4 +1,4 @@
-import './Search.css';
+import './Search.scss';
 import React, { useEffect, useRef, useState } from 'react';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 import SearchIcon from '@material-ui/icons/Search';

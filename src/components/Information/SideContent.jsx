@@ -1,4 +1,4 @@
-import './SideContent.css';
+import './SideContent.scss';
 import React from 'react';
 
 function SideContent() {
