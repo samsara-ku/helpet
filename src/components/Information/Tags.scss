@@ -1,0 +1,19 @@
+.tags {
+  padding: 40px 0;
+  gap: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__tag {
+    background-color: #eaeaea66;
+    padding: 5px 4px;
+    font-size: small;
+
+    &::before {
+      content: "#";
+      margin: 0 3px 0 5px;
+      display: inline-block;
+    }
+  }
+}

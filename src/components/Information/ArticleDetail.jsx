@@ -5,6 +5,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 import ShareBtn from './ShareBtn';
+import Tags from './Tags';
 
 function ArticleDetail() {
   return (
@@ -41,13 +42,7 @@ function ArticleDetail() {
         </div>
       </div>
 
-      <div className="article-detail__tags">
-        {['강아지 산책', '강아지 주인', '강아지 행동'].map(e => (
-          <Link to="/" key={e}>
-            <span className="article-detail__tag boder">{e}</span>
-          </Link>
-        ))}
-      </div>
+      <Tags />
 
       <div className="article-detail__related-posts border">
         <h4>관련 글</h4>
