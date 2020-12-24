@@ -1,7 +1,7 @@
 import './Articles.scss';
 import React from 'react';
 import Article from './Article';
-import Pagenation from './Pagenation';
+import Pagination from './Pagination';
 
 function Articles() {
   return (
@@ -19,7 +19,7 @@ function Articles() {
           ))}
       </div>
 
-      <Pagenation />
+      <Pagination current="6" total="10" baseUrl="" />
     </div>
   );
 }
