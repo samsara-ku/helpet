@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './Layout1.css';
+import './Layout1.scss';
 import React from 'react';
 
 function Layout1({ mainContent, sideContent }) {

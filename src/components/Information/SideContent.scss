@@ -1,0 +1,27 @@
+.side-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+  hr {
+    background-image: url(//t1.daumcdn.net/brunch/static/img/line/pc_line_type_03.png) !important;
+    background-position: 50% 50%;
+  }
+
+  &__card {
+    padding: 20px;
+    margin-bottom: 20px;
+
+    hr {
+      margin: 20px 0;
+    }
+  }
+
+  &__content {
+    margin: 20px 0;
+    display: flex;
+    height: 400px;
+    background-color: white;
+  }
+}

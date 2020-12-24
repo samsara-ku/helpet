@@ -1,0 +1,27 @@
+.search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+
+  input {
+    border: none;
+    flex: 1;
+    height: 45px;
+    padding: 10px;
+    padding-left: 31px;
+    background-color: transparent;
+    overflow: hidden;
+  }
+
+  button {
+    background-color: #ffcd00;
+    padding: 5px;
+  }
+
+  button svg {
+    font-size: xx-large;
+  }
+}

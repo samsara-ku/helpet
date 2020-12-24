@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import './SearchForm.css';
+import './SearchForm.scss';
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 

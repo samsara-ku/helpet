@@ -1,44 +1,44 @@
 .article {
   width: 100%;
   padding: 20px;
-}
 
-.article__meta {
-  display: flex;
-  justify-content: space-between;
-}
+  &__meta {
+    display: flex;
+    justify-content: space-between;
+  }
 
-.article__meta__date::before {
-  content: "\2022";
-  color: #ccc;
-  margin: 0 3px 0 5px;
-  display: inline-block;
-}
+  &__meta__date::before {
+    content: "\2022";
+    color: #ccc;
+    margin: 0 3px 0 5px;
+    display: inline-block;
+  }
 
-.article__content {
-  margin: 40px 0;
-}
+  &__content {
+    margin: 40px 0;
+  }
 
-.article__ad {
-  display: flex;
-  justify-content: center;
-}
+  &__ad {
+    display: flex;
+    justify-content: center;
+  }
 
-.article__tags {
-  padding: 40px 0;
-  gap: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+  &__tags {
+    padding: 40px 0;
+    gap: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-.article__tag {
-  background-color: gray;
-  padding: 10px 20px;
-}
+  &__tag {
+    background-color: gray;
+    padding: 10px 20px;
 
-.article__tag::before {
-  content: "#";
-  margin: 0 3px 0 5px;
-  display: inline-block;
+    &::before {
+      content: "#";
+      margin: 0 3px 0 5px;
+      display: inline-block;
+    }
+  }
 }
