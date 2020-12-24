@@ -1,16 +1,12 @@
 import './ArticleDetail.scss';
-import React, { useState } from 'react';
+import React from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom';
-import ShareIcon from '@material-ui/icons/Share';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import TwitterIcon from '@material-ui/icons/Twitter';
+import ShareBtn from './ShareBtn';
 
 function ArticleDetail() {
-  const [isShowShareOption, setIsShowShareOption] = useState(false);
-
   return (
     <div className="article-detail border">
       <div className="article-detail__breadcrumb">
@@ -41,37 +37,7 @@ function ArticleDetail() {
           </button>
         </div>
         <div className="article-detail__btns__right">
-          <button
-            type="button"
-            onClick={() => {
-              // console.log(e);
-              setIsShowShareOption(!isShowShareOption);
-            }}
-          >
-            <ShareIcon />
-          </button>
-          {isShowShareOption && (
-            <div className="share-option border">
-              <button
-                type="button"
-                onClick={() => {
-                  console.log(123);
-                }}
-              >
-                <FacebookIcon />
-                Facebook
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  console.log(123);
-                }}
-              >
-                <TwitterIcon />
-                Twitter
-              </button>
-            </div>
-          )}
+          <ShareBtn />
         </div>
       </div>
 
