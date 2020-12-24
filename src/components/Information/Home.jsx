@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import GradeIcon from '@material-ui/icons/Grade';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import Menu from './Menu';
 
 function Home() {
   const mockData = [
@@ -38,6 +39,7 @@ function Home() {
 
   return (
     <div className="home">
+      <Menu />
       <div className="home__logo">
         <GradeIcon />
       </div>
