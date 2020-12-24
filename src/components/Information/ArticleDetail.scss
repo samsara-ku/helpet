@@ -1,6 +1,22 @@
-.article {
-  width: 100%;
+.article-detail {
+  max-width: 1247px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+
+  &__breadcrumb {
+    display: flex;
+    align-items: center;
+    color: #696969;
+    font-size: small;
+    margin-bottom: 20px;
+
+    svg {
+      font-size: inherit;
+      margin-right: 5px;
+    }
+  }
 
   &__meta {
     display: flex;
