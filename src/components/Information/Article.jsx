@@ -8,8 +8,14 @@ function Article() {
         <img src="https://via.placeholder.com/390x220?text=1" alt="" />
       </div>
       <div className="article__info">
-        <h4>title</h4>
-        <p>content</p>
+        <h4>
+          titletitletitletitletitletitletitletitletitletitletitletit
+          letitletitletitletitletitletitletitletitletitletit
+          letitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle
+        </h4>
+        <p>
+          contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontent
+        </p>
       </div>
     </div>
   );

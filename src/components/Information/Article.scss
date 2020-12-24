@@ -1,0 +1,38 @@
+.article {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  position: relative;
+  padding: 0 10px;
+  max-height: 250px;
+  margin-bottom: 20px;
+
+  &__image-wrapper {
+    text-align: center;
+
+    img {
+      background-color: gray;
+      max-width: 100%;
+      border-radius: 2px;
+    }
+  }
+
+  &__info {
+    line-height: 27px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    > h4 {
+      overflow: hidden;
+      line-break: anywhere;
+      text-overflow: inherit;
+      max-height: 30px;
+    }
+
+    > p {
+      text-overflow: ellipsis;
+      overflow-wrap: anywhere;
+    }
+  }
+}

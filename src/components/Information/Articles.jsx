@@ -1,12 +1,25 @@
 import './Articles.scss';
 import React from 'react';
+import Article from './Article';
+import Pagenation from './Pagenation';
 
 function Articles() {
   return (
     <div className="articles">
-      <div>메타</div>
-      <div>목록</div>
-      <div>페이지네이션</div>
+      <div className="articles__meta">
+        <span>
+          <strong>강아지</strong>에 대한 검색 결과
+        </span>
+      </div>
+      <div className="articles__content">
+        {Array(5)
+          .fill('')
+          .map((item, idx) => (
+            <Article key={idx} />
+          ))}
+      </div>
+
+      <Pagenation />
     </div>
   );
 }
