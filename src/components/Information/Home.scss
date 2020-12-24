@@ -6,16 +6,22 @@
   width: 100%;
   padding: 0 150px;
 
-  &__logo {
-    svg {
-      font-size: 50px;
-      margin: 20px 0;
-    }
-  }
+  &__header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
 
-  &__search-area {
-    width: 600px;
-    margin-bottom: 100px;
+    &__logo {
+      svg {
+        font-size: 50px;
+        margin: 20px 0;
+      }
+    }
+
+    &__search-area {
+      width: 1000px;
+      margin-bottom: 100px;
+    }
   }
 
   &__content {

@@ -63,11 +63,13 @@ function Home() {
   return (
     <div className="home">
       <Menu />
-      <div className="home__logo">
-        <GradeIcon />
-      </div>
-      <div className="home__search-area">
-        <Search />
+      <div className="home__header">
+        <div className="home__header__logo">
+          <GradeIcon />
+        </div>
+        <div className="home__header__search-area">
+          <Search />
+        </div>
       </div>
       <div className="home__content">
         <div className="home__content__title">인기 콘텐츠</div>
