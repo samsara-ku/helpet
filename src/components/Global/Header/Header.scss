@@ -1,3 +1,5 @@
+@import "../../Information/variables";
+
 $colors: #3b5998, #c4302b, #d6249f, #00acee;
 
 .header {
@@ -14,7 +16,7 @@ $colors: #3b5998, #c4302b, #d6249f, #00acee;
     justify-content: space-between;
     width: inherit;
     height: inherit;
-    background-color: #71a9f2;
+    background-color: $mainColor;
     padding: 0 150px;
     transition: 0.2s ease;
 
