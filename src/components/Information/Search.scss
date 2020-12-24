@@ -1,9 +1,11 @@
+@import "./variables";
+
 .search {
   padding: 20px;
   position: relative;
 
   &__theme {
-    border: solid #ffcd00 2px;
+    border: solid $mainColor 2px;
     border-radius: 6px;
     display: flex;
     position: relative;
@@ -14,7 +16,7 @@
   }
 
   &__history {
-    border: solid #ffcd00;
+    border: solid $mainColor;
     border-radius: 0 0 6px 6px;
     border-width: 0 2px 2px 2px;
     position: absolute;
