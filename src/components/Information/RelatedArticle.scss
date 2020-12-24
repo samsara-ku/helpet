@@ -1,0 +1,55 @@
+@import "./variables";
+
+.related-article {
+  padding: 10px;
+
+  > h4 {
+    margin-bottom: 20px;
+  }
+
+  > div {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    > a > div {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      width: 320px;
+
+      .img-wrapper {
+        overflow: hidden;
+        border-radius: 2px;
+
+        > img {
+          background-color: gray;
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin: 3px 0;
+        font-weight: 600;
+      }
+
+      .time {
+        margin: 3px 0;
+        display: flex;
+        align-items: center;
+        font-size: small;
+        color: $grayColor;
+
+        > svg {
+          font-size: inherit;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
