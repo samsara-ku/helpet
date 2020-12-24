@@ -6,7 +6,6 @@ import HomeContainer from './containers/HomeContainer';
 import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
 import Search from './components/Information/Search';
-import ArticleDetail from './components/Information/ArticleDetail';
 
 function App() {
   return (
