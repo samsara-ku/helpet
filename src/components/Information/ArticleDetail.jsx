@@ -1,12 +1,16 @@
 import './ArticleDetail.scss';
-import React from 'react';
+import React, { useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import { Link } from 'react-router-dom';
 import ShareIcon from '@material-ui/icons/Share';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import TwitterIcon from '@material-ui/icons/Twitter';
 
 function ArticleDetail() {
+  const [isShowShareOption, setIsShowShareOption] = useState(false);
+
   return (
     <div className="article-detail border">
       <div className="article-detail__breadcrumb">
@@ -37,9 +41,37 @@ function ArticleDetail() {
           </button>
         </div>
         <div className="article-detail__btns__right">
-          <button type="button" onClick={console.log}>
+          <button
+            type="button"
+            onClick={() => {
+              // console.log(e);
+              setIsShowShareOption(!isShowShareOption);
+            }}
+          >
             <ShareIcon />
           </button>
+          {isShowShareOption && (
+            <div className="share-option border">
+              <button
+                type="button"
+                onClick={() => {
+                  console.log(123);
+                }}
+              >
+                <FacebookIcon />
+                Facebook
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  console.log(123);
+                }}
+              >
+                <TwitterIcon />
+                Twitter
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -57,7 +89,7 @@ function ArticleDetail() {
           {Array(10)
             .fill('')
             .map((i, idx) => (
-              <Link key={i + idx}>
+              <Link key={i + idx} to="/">
                 <div>
                   <div className="img-wrapper">
                     <img src={`https://via.placeholder.com/390x220?text=${i + idx}`} alt="" />
