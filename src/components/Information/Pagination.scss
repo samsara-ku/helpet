@@ -1,0 +1,19 @@
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+
+  &__item {
+    padding: 10px 20px;
+    border-radius: 2px;
+    transition: 0.1s ease;
+    font-weight: 600;
+
+    &:hover {
+      background-color: rgba(165, 165, 165, 0.158);
+    }
+  }
+}

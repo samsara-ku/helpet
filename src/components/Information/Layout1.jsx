@@ -2,12 +2,12 @@
 import './Layout1.scss';
 import React from 'react';
 
-function Layout1({ mainContent, sideContent }) {
+function Layout1({ mainContent }) {
   return (
     <div className="layout1">
-      <div className="layout1__main">{mainContent}</div>
-
-      <div className="layout1__side">{sideContent}</div>
+      {/* <div className="layout1__main">{mainContent}</div> */}
+      {mainContent}
+      {/* <div className="layout1__side">{sideContent}</div> */}
     </div>
   );
 }

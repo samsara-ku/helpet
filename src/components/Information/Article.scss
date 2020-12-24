@@ -1,27 +1,39 @@
 .article {
+  display: flex;
+  gap: 10px;
   width: 100%;
-  padding: 20px;
+  position: relative;
+  padding: 0 10px;
+  max-height: 250px;
+  margin-bottom: 20px;
 
-  &__meta {
-    display: flex;
-    justify-content: space-between;
+  &__image-wrapper {
+    text-align: center;
+
+    img {
+      background-color: gray;
+      max-width: 100%;
+      border-radius: 2px;
+    }
   }
 
-  &__meta__date::before {
-    content: "\2022";
-    color: #ccc;
-    margin: 0 3px 0 5px;
-    display: inline-block;
-  }
+  &__info {
+    line-height: 27px;
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
 
-  &__content {
-    margin: 40px 0;
-  }
+    > h4 {
+      overflow: hidden;
+      line-break: anywhere;
+      text-overflow: inherit;
+      max-height: 30px;
+    }
 
-  &__ad {
-    display: flex;
-    justify-content: center;
-  }
+    > p {
+      text-overflow: ellipsis;
+      overflow-wrap: anywhere;
+    }
 
   &__tags {
     padding: 40px 0;

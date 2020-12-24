@@ -1,0 +1,32 @@
+import './Pagination.scss';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+function Pagination({ current, total, baseUrl }) {
+  const clampNumber = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
+
+  const generateView = () => {
+    console.log(current, total, baseUrl);
+    const resultElements = [];
+
+    for (
+      let i = clampNumber(current - 4, 1, total);
+      i <= clampNumber(current + 4, current, total);
+      i += 1
+    ) {
+      const element = (
+        <Link to={`${baseUrl}/page/${i}`} className="pagination__item">
+          <span>{i}</span>
+        </Link>
+      );
+
+      resultElements.push(element);
+    }
+
+    return resultElements;
+  };
+
+  return <div className="pagination border">{generateView()}</div>;
+}
+
+export default Pagination;
