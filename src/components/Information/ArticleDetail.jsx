@@ -3,7 +3,7 @@ import React from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import { Link } from 'react-router-dom';
 
-function Article() {
+function ArticleDetail() {
   return (
     <div className="article border">
       <div className="article__breadcrumb">
@@ -45,4 +45,4 @@ function Article() {
   );
 }
 
-export default Article;
+export default ArticleDetail;
