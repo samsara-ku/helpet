@@ -5,10 +5,9 @@ import useScrollFadeIn from '../../hooks/useScrollFadeIn';
 
 function Main() {
   const animatedItem = {
-    1: useScrollFadeIn('down', 1, 0.2),
-    2: useScrollFadeIn('down', 1, 0.3),
-    3: useScrollFadeIn('down', 1, 0.4),
-    4: useScrollFadeIn('down', 1, 0.5),
+    1: useScrollFadeIn('right', 1, 0.2),
+    2: useScrollFadeIn('left', 1, 0.2),
+    3: useScrollFadeIn('right', 1, 0.2),
   };
 
   return (
@@ -62,18 +61,46 @@ function Main() {
               d="M507.695 11.7344H474.789V103H461.359V11.7344H428.523V0.625H507.695V11.7344Z"
             />
           </svg>
+          <div>Help + Pet</div>
         </div>
-        <div className="main__content-row" {...animatedItem[1]}>
-          <div className="test">This area is for test!</div>
+        <div className="main__content-row">
+          <div className="main__content-col" {...animatedItem[1]}>
+            <div className="title">정보 지식 채널</div>
+            <div className="concept">여러분들은 여러분들의 반려동물에 대해 얼마나 알고 있나요?</div>
+            <div className="description">
+              첫 만남부터 이별까지. <br />
+              반려동물 주인으로서 꼭 필요한 정보들을 모았습니다.
+            </div>
+            <div role="button" className="button">
+              바로가기
+            </div>
+          </div>
         </div>
-        <div className="main__content-row" {...animatedItem[2]}>
-          <div className="test">This area is for test!</div>
+        <div className="main__content-row">
+          <div className="main__content-col" {...animatedItem[2]}>
+            <div className="title">입양 채널</div>
+            <div className="concept">힘들고 외로운 동물들을 도와주실 수 있으신가요?</div>
+            <div className="description">
+              여러분들의 손길이 필요한 동물들이 있습니다. <br />
+              아이들에게 행복한 시간을 선물해주세요.
+            </div>
+            <div role="button" className="button">
+              바로가기
+            </div>
+          </div>
         </div>
-        <div className="main__content-row" {...animatedItem[3]}>
-          <div className="test">This area is for test!</div>
-        </div>
-        <div className="main__content-row" {...animatedItem[4]}>
-          <div className="test">This area is for test!</div>
+        <div className="main__content-row">
+          <div className="main__content-col" {...animatedItem[3]}>
+            <div className="title">스토어 채널</div>
+            <div className="concept">요즘 가장 핫한 아이템이 무엇인지 아시나요?</div>
+            <div className="description">
+              요즘 대세 집사들은 모두 갖고 있다는 그것!
+              <br /> 여기서 확인해보세요!
+            </div>
+            <div role="button" className="button">
+              바로가기
+            </div>
+          </div>
         </div>
       </div>
       <div className="main__footer">Footer is here</div>

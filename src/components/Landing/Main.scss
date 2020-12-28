@@ -1,5 +1,12 @@
 @import "../Information/variables";
 
+$stroke: 544.78, 525.23, 328.92, 482.58, 525.23, 363.09;
+$time: 0s, 0.3s, 0.6s, 0.9s, 1.2s, 1.5s;
+$image: "",
+  "https://images.vexels.com/media/users/3/182544/isolated/preview/bc981ed8f2641d8f9f8e6f7249839904-cute-cat-stroke-washes-kitten-by-vexels.png",
+  "https://images.vexels.com/media/users/3/182537/isolated/preview/76f024e6745b3e971e1ec65cd6e7ff49-cute-cat-stroke-by-vexels.png",
+  "https://images.vexels.com/media/users/3/182541/isolated/lists/5c4f63d29c42f4643bfa4d3c809acb1f-cute-cat-stroke-sleeping.png";
+
 .main {
   &__header {
     display: flex;
@@ -28,52 +35,79 @@
   }
 
   &__content {
-    background-color: red;
-
     &-row {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 500px;
+      background-color: $mainColor;
+      padding: 100px 0;
+
+      @for $i from 2 through 4 {
+        &:nth-child(#{$i}) {
+          height: 600px;
+          justify-content: start;
+          padding: 0 100px;
+          box-shadow: 0 0 10px 0 rgba(107, 107, 107, 0.5);
+          background-color: white;
+
+          &::before {
+            content: "";
+            width: 300px;
+            height: 100%;
+            background: no-repeat center/100% url(nth($image, $i));
+          }
+
+          @if $i % 2 == 0 {
+            flex-direction: row;
+          } @else {
+            flex-direction: row-reverse;
+          }
+        }
+      }
     }
 
-    .test {
-      background-color: blue;
+    &-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 50px;
+      color: #54595f;
+
+      .title {
+        font-size: 40px;
+        font-weight: 800;
+      }
+
+      .description {
+        margin-bottom: 60px;
+      }
+
+      .button {
+        padding: 20px 50px;
+        border-radius: 30px;
+        color: black;
+        background-color: $mainColor;
+        cursor: pointer;
+        transition: 0.25s ease;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
     }
 
     #logo {
       animation: fill 0.5s ease forwards 3.5s;
-    }
 
-    #logo path:nth-child(1) {
-      stroke-dasharray: 544.78;
-      stroke-dashoffset: 544.78;
-      animation: draw 2s ease forwards;
-    }
-    #logo path:nth-child(2) {
-      stroke-dasharray: 525.23;
-      stroke-dashoffset: 525.23;
-      animation: draw 2s ease forwards 0.3s;
-    }
-    #logo path:nth-child(3) {
-      stroke-dasharray: 328.92;
-      stroke-dashoffset: 328.92;
-      animation: draw 2s ease forwards 0.6s;
-    }
-    #logo path:nth-child(4) {
-      stroke-dasharray: 482.58;
-      stroke-dashoffset: 482.58;
-      animation: draw 2s ease forwards 0.9s;
-    }
-    #logo path:nth-child(5) {
-      stroke-dasharray: 525.23;
-      stroke-dashoffset: 525.23;
-      animation: draw 2s ease forwards 1.2s;
-    }
-    #logo path:nth-child(6) {
-      stroke-dasharray: 363.09;
-      stroke-dashoffset: 363.09;
-      animation: draw 2s ease forwards 1.5s;
+      @for $i from 1 through 6 {
+        & path:nth-child(#{$i}) {
+          stroke-dasharray: nth($stroke, $i);
+          stroke-dashoffset: nth($stroke, $i);
+          animation: draw 2s ease forwards nth($time, $i);
+        }
+      }
     }
   }
 }
