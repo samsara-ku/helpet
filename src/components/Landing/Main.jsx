@@ -1,6 +1,7 @@
 /* eslint-disable no-plusplus */
 import React from 'react';
 import './Main.scss';
+import { Link } from 'react-router-dom';
 import useScrollFadeIn from '../../hooks/useScrollFadeIn';
 
 function Main() {
@@ -61,7 +62,12 @@ function Main() {
               d="M507.695 11.7344H474.789V103H461.359V11.7344H428.523V0.625H507.695V11.7344Z"
             />
           </svg>
-          <div>Help + Pet</div>
+          <div className="concept">"Help + Pet, Helpet."</div>
+          <div className="description">반려동물에 대한 정보를 찾으실 때 힘들지 않으신가요?</div>
+          <div className="description">
+            저희 헬펫은 반려동물 멀티 플랫폼이라는 목표로 반려동물과 동행하는 분들에게 도움을 주기
+            위해서 활동합니다.
+          </div>
         </div>
         <div className="main__content-row">
           <div className="main__content-col" {...animatedItem[1]}>
@@ -71,9 +77,11 @@ function Main() {
               첫 만남부터 이별까지. <br />
               반려동물 주인으로서 꼭 필요한 정보들을 모았습니다.
             </div>
-            <div role="button" className="button">
-              바로가기
-            </div>
+            <Link to="home">
+              <div role="button" className="button">
+                바로가기
+              </div>
+            </Link>
           </div>
         </div>
         <div className="main__content-row">
@@ -84,9 +92,11 @@ function Main() {
               여러분들의 손길이 필요한 동물들이 있습니다. <br />
               아이들에게 행복한 시간을 선물해주세요.
             </div>
-            <div role="button" className="button">
-              바로가기
-            </div>
+            <Link to="home">
+              <div role="button" className="button">
+                바로가기
+              </div>
+            </Link>
           </div>
         </div>
         <div className="main__content-row">
@@ -97,9 +107,11 @@ function Main() {
               요즘 대세 집사들은 모두 갖고 있다는 그것!
               <br /> 여기서 확인해보세요!
             </div>
-            <div role="button" className="button">
-              바로가기
-            </div>
+            <Link to="home">
+              <div role="button" className="button">
+                바로가기
+              </div>
+            </Link>
           </div>
         </div>
       </div>
