@@ -1,0 +1,139 @@
+@import "../Information/variables";
+
+$stroke: 544.78, 525.23, 328.92, 482.58, 525.23, 363.09;
+$time: 0s, 0.3s, 0.6s, 0.9s, 1.2s, 1.5s;
+$image: "",
+  "https://images.vexels.com/media/users/3/182544/isolated/preview/bc981ed8f2641d8f9f8e6f7249839904-cute-cat-stroke-washes-kitten-by-vexels.png",
+  "https://images.vexels.com/media/users/3/182537/isolated/preview/76f024e6745b3e971e1ec65cd6e7ff49-cute-cat-stroke-by-vexels.png",
+  "https://images.vexels.com/media/users/3/182541/isolated/lists/5c4f63d29c42f4643bfa4d3c809acb1f-cute-cat-stroke-sleeping.png";
+
+.main {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    padding: 15px 40px;
+    gap: 10px;
+
+    &-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-choice {
+      display: flex;
+      padding: 15px 20px;
+      transition: 0.25s ease;
+      cursor: pointer;
+
+      &:hover {
+        color: $mainColor;
+      }
+    }
+  }
+
+  &__content {
+    &-row {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $mainColor;
+      padding: 100px 0;
+
+      &:nth-child(1) {
+        .concept {
+          font-size: 32px;
+          padding: 60px 0 20px;
+        }
+        .description {
+          line-height: 24px;
+        }
+      }
+
+      @for $i from 2 through 4 {
+        &:nth-child(#{$i}) {
+          height: 600px;
+          justify-content: start;
+          padding: 0 100px;
+          box-shadow: 0 0 10px 0 rgba(107, 107, 107, 0.5);
+          background-color: white;
+
+          &::before {
+            content: "";
+            width: 300px;
+            height: 100%;
+            background: no-repeat center/100% url(nth($image, $i));
+          }
+
+          @if $i % 2 == 0 {
+            flex-direction: row;
+          } @else {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 50px;
+      color: #54595f;
+
+      .title {
+        font-size: 40px;
+        font-weight: 800;
+      }
+
+      .description {
+        margin-bottom: 50px;
+      }
+
+      .button {
+        padding: 20px 50px;
+        border-radius: 30px;
+        color: black;
+        background-color: $mainColor;
+        cursor: pointer;
+        transition: 0.25s ease;
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    #logo {
+      animation: fill 0.5s ease forwards 3.5s;
+
+      @for $i from 1 through 6 {
+        & path:nth-child(#{$i}) {
+          stroke-dasharray: nth($stroke, $i);
+          stroke-dashoffset: nth($stroke, $i);
+          animation: draw 2s ease forwards nth($time, $i);
+        }
+      }
+    }
+  }
+}
+
+@keyframes draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: transparent;
+  }
+
+  to {
+    fill: white;
+  }
+}

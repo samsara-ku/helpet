@@ -6,27 +6,35 @@ import HomeContainer from './containers/HomeContainer';
 import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
 import Search from './components/Information/Search';
+import Main from './components/Landing/Main';
 
 function App() {
   return (
     <Router>
       <div className="app">
-        <Header />
         <Switch>
-          <Route path="/test">
-            <Search />
-          </Route>
-
-          <Route path="/article">
-            <ArticlePageContainer />
-          </Route>
-
           <Route exact path="/">
+            <Main />
+          </Route>
+
+          <Route exact path="/home">
+            <Header />
             <HomeContainer />
             <Footer />
           </Route>
 
+          <Route path="/test">
+            <Header />
+            <Search />
+          </Route>
+
+          <Route path="/article">
+            <Header />
+            <ArticlePageContainer />
+          </Route>
+
           <Route path="*">
+            <Header />
             <Notfound />
           </Route>
         </Switch>

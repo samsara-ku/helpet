@@ -1,11 +1,15 @@
 import './Home.scss';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import GradeIcon from '@material-ui/icons/Grade';
 import { Link } from 'react-router-dom';
 import Search from './Search';
 import Menu from './Menu';
 
 function Home() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const mockData = [
     {
       content:
