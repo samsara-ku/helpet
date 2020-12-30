@@ -11,7 +11,7 @@ const ArticlePageContainer = () => {
   const [article, setArticle] = useState({});
 
   useEffect(async () => {
-    const endpoint = 'http://localhost:5000/graphql';
+    const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     const query = `
     {
       article(aidx: ${aidx}) {
