@@ -35,22 +35,23 @@
       overflow-wrap: anywhere;
     }
 
-  &__tags {
-    padding: 40px 0;
-    gap: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+    &__tags {
+      padding: 40px 0;
+      gap: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-  &__tag {
-    background-color: gray;
-    padding: 10px 20px;
+    &__tag {
+      background-color: gray;
+      padding: 10px 20px;
 
-    &::before {
-      content: "#";
-      margin: 0 3px 0 5px;
-      display: inline-block;
+      &::before {
+        content: "#";
+        margin: 0 3px 0 5px;
+        display: inline-block;
+      }
     }
   }
 }
