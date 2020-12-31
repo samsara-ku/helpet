@@ -2,22 +2,31 @@ import './Article.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Article({ url }) {
+// type ArticlePreview {
+//   aidx: Int
+//   title: String
+//   summary: String
+//   thumbnail: String
+//   use_flag: String
+//   count_view: Int
+//   count_like: Int
+//   insert_date: String
+//   update_date: String
+//   insert_uidx: Int
+//   category_code: String
+// }
+
+function Article({ aidx, title, summary, thumbnail, insertDate }) {
   return (
-    <Link to={`./article/${url}`}>
+    <Link to={`./article/${aidx}`}>
       <div className="article">
         <div className="article__image-wrapper">
-          <img src="https://via.placeholder.com/390x220?text=1" alt="" />
+          <img src={thumbnail} alt="no thumbnail" />
         </div>
         <div className="article__info">
-          <h4>
-            titletitletitletitletitletitletitletitletitletitletitletit
-            letitletitletitletitletitletitletitletitletitletit
-            letitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitletitle
-          </h4>
-          <p>
-            contentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontentcontent
-          </p>
+          <h4>{title}</h4>
+          <p>{summary}</p>
+          <span>{insertDate}</span>
         </div>
       </div>
     </Link>

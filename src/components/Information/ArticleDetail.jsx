@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 import './ArticleDetail.scss';
 import React from 'react';
 import HomeIcon from '@material-ui/icons/Home';
@@ -6,34 +7,37 @@ import ShareBtn from './ShareBtn';
 import Tags from './Tags';
 import RelatedArticle from './RelatedArticle';
 
-function ArticleDetail() {
+function ArticleDetail({
+  title,
+  content,
+  countView,
+  countLike,
+  insertDate,
+  updateDate,
+  insertUidx,
+  categoryCode,
+}) {
+  const _content = { __html: content };
+
   return (
     <div className="article-detail border">
       <div className="article-detail__breadcrumb">
         <HomeIcon />
-        <span>홈/강아지 연구소/강아지 행동/강아지 보호자를 화나게 하는 말 5가지</span>
+        <span>
+          {categoryCode} {countView} {insertDate} {updateDate} {insertUidx}
+        </span>
       </div>
       <div className="article-detail__title">
-        <h1>타이틀</h1>
+        <h1>{title}</h1>
       </div>
 
-      <div className="article-detail__content">
-        {Array(10)
-          .fill('')
-          .map((i, idx) => (
-            <p key={i + idx}>
-              여기는 콘텐츠 영역입니다.
-              <br />
-              <br />
-            </p>
-          ))}
-      </div>
+      <div className="article-detail__content" dangerouslySetInnerHTML={_content} />
 
       <div className="article-detail__btns">
         <div className="article-detail__btns__left">
           <button type="button" onClick={console.log}>
             <ThumbUpIcon />
-            <span>99</span>
+            <span>{countLike}</span>
           </button>
         </div>
         <div className="article-detail__btns__right">

@@ -5,7 +5,7 @@ import Notfound from './components/Information/Notfound';
 import HomeContainer from './containers/HomeContainer';
 import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
-import Search from './components/Information/Search';
+import Articles from './components/Information/Articles';
 import Main from './components/Landing/Main';
 
 function App() {
@@ -23,12 +23,12 @@ function App() {
             <Footer />
           </Route>
 
-          <Route path="/test">
+          <Route path="/sungjae-test">
             <Header />
-            <Search />
+            <Articles />
           </Route>
 
-          <Route path="/article">
+          <Route path="/article/:aidx">
             <Header />
             <ArticlePageContainer />
           </Route>
