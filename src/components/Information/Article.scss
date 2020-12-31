@@ -1,33 +1,33 @@
 .article {
+  position: relative;
   display: flex;
   gap: 10px;
   width: 100%;
-  position: relative;
-  padding: 0 10px;
   max-height: 250px;
   margin-bottom: 20px;
+  padding: 0 10px;
 
   &__image-wrapper {
     text-align: center;
 
     img {
-      background-color: gray;
       max-width: 100%;
+      background-color: gray;
       border-radius: 2px;
     }
   }
 
   &__info {
-    line-height: 27px;
     width: 100%;
-    text-overflow: ellipsis;
     overflow: hidden;
+    line-height: 27px;
+    text-overflow: ellipsis;
 
     > h4 {
-      overflow: hidden;
-      line-break: anywhere;
-      text-overflow: inherit;
       max-height: 30px;
+      overflow: hidden;
+      text-overflow: inherit;
+      line-break: anywhere;
     }
 
     > p {
@@ -36,21 +36,21 @@
     }
 
     &__tags {
-      padding: 40px 0;
-      gap: 30px;
       display: flex;
-      justify-content: center;
+      gap: 30px;
       align-items: center;
+      justify-content: center;
+      padding: 40px 0;
     }
 
     &__tag {
-      background-color: gray;
       padding: 10px 20px;
+      background-color: gray;
 
       &::before {
-        content: "#";
-        margin: 0 3px 0 5px;
         display: inline-block;
+        margin: 0 3px 0 5px;
+        content: "#";
       }
     }
   }
