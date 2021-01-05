@@ -7,6 +7,7 @@ import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
 import Articles from './components/Information/Articles';
 import Main from './components/Landing/Main';
+import AdoptationIndex from './components/Adoptation/Index';
 
 function App() {
   return (
@@ -20,6 +21,12 @@ function App() {
           <Route exact path="/home">
             <Header />
             <HomeContainer />
+            <Footer />
+          </Route>
+
+          <Route path="/adopt">
+            <Header />
+            <AdoptationIndex />
             <Footer />
           </Route>
 
