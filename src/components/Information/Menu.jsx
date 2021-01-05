@@ -1,8 +1,12 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+// Above things are disable something about Web accessibility
 import React, { useState } from 'react';
 import './Menu.scss';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HiddenMenu from './HiddenMenu';
+import SignIn from './SignIn';
 
 function Header() {
   const mockData1 = '12345';
@@ -13,6 +17,7 @@ function Header() {
     imgSrc: 'https://cdn.pixabay.com/photo/2020/06/30/22/34/dog-5357794__340.jpg',
   };
 
+  const [open, setOpen] = useState(false);
   const [hover, setHover] = useState([false, false, false]);
 
   const handleHover = index => {
@@ -31,7 +36,9 @@ function Header() {
           <div
             className="menu__col__choice"
             onMouseEnter={() => handleHover(0)}
-            onMouseLeave={() => setHover([false, false, false])}
+            onMouseLeave={() => {
+              setHover([false, false, false]);
+            }}
           >
             강아지 연구소
             <ArrowDropDownIcon />
@@ -44,7 +51,9 @@ function Header() {
           <div
             className="menu__col__choice"
             onMouseEnter={() => handleHover(1)}
-            onMouseLeave={() => setHover([false, false, false])}
+            onMouseLeave={() => {
+              setHover([false, false, false]);
+            }}
           >
             고양이 연구소
             <ArrowDropDownIcon />
@@ -57,7 +66,9 @@ function Header() {
           <div
             className="menu__col__choice"
             onMouseEnter={() => handleHover(2)}
-            onMouseLeave={() => setHover([false, false, false])}
+            onMouseLeave={() => {
+              setHover([false, false, false]);
+            }}
           >
             생활 연구소
             <ArrowDropDownIcon />
@@ -67,10 +78,14 @@ function Header() {
               visible={hover[2]}
             />
           </div>
-          <div className="menu__col__choice">몰라 연구소</div>
+          <div className="menu__col__choice" onClick={() => setOpen(true)}>
+            로그인
+          </div>
           <div className="menu__col__choice">히히 연구소</div>
         </div>
       </div>
+
+      <SignIn isOpen={open} close={() => setOpen(false)} />
     </div>
   );
 }
