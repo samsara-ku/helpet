@@ -1,0 +1,38 @@
+$image: "http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg",
+  "http://www.saac.kr/images/kor09r-17-0380/main/main_visual02.jpg";
+
+.adopt .home {
+  min-height: 600px;
+  padding: 30px;
+
+  > h1 {
+    margin-bottom: 50px;
+  }
+
+  &__route-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+
+    &-item {
+      display: flex;
+      align-items: center;
+      min-height: 400px;
+      padding: 20px;
+      border-radius: 4px;
+
+      > h3 {
+        margin: 30px;
+        color: white;
+      }
+
+      &.image1 {
+        background: no-repeat center/500% url(nth($image, 1));
+      }
+
+      &.image2 {
+        background: no-repeat center/500% url(nth($image, 2));
+      }
+    }
+  }
+}

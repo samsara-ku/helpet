@@ -1,26 +1,29 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Main from './Main';
+import Home from './Home';
 import InfoList from './InfoList';
 import ReviewList from './ReviewList';
+import './Index.scss';
 
 function Index() {
   return (
-    <Router basename="/adopt">
-      <Switch>
-        <Route exact path="/">
-          <Main />
-        </Route>
+    <div className="adopt">
+      <Router basename="/adopt">
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route path="/information/list">
-          <InfoList />
-        </Route>
+          <Route path="/information/list">
+            <InfoList />
+          </Route>
 
-        <Route path="/review/list">
-          <ReviewList />
-        </Route>
-      </Switch>
-    </Router>
+          <Route path="/review/list">
+            <ReviewList />
+          </Route>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
