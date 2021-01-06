@@ -2,7 +2,6 @@ $image: "http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg",
   "http://www.saac.kr/images/kor09r-17-0380/main/main_visual02.jpg";
 
 .adopt .home {
-  min-height: 600px;
   padding: 30px;
 
   > h1 {
@@ -20,10 +19,15 @@ $image: "http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg",
       min-height: 400px;
       padding: 20px;
       border-radius: 4px;
+      transition: transform 0.2s;
 
       > h3 {
         margin: 30px;
         color: white;
+      }
+
+      &:hover {
+        transform: scale(1.05);
       }
 
       &.image1 {
