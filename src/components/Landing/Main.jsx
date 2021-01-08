@@ -115,7 +115,6 @@ function Main() {
           </div>
         </div>
       </div>
-      <div className="main__footer">Footer is here</div>
     </div>
   );
 }
