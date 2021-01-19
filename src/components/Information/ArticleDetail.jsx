@@ -1,6 +1,6 @@
 /* eslint-disable react/no-danger */
 import './ArticleDetail.scss';
-import React from 'react';
+import React, { useEffect } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ShareBtn from './ShareBtn';
@@ -17,6 +17,14 @@ function ArticleDetail({
   insertUidx,
   categoryCode,
 }) {
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   const _content = { __html: content };
 
   return (
