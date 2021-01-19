@@ -3,7 +3,7 @@ import './HiddenMenu.scss';
 
 function HiddenMenu({ category, post, visible }) {
   return (
-    <div className={`hidden-menu ${visible && 'visible'}`}>
+    <div className={`hidden-menu ${visible ? ' visible' : ''}`}>
       <div className="hidden-menu__row">
         <ul className="hidden-menu-category">
           {category.map(e => (
