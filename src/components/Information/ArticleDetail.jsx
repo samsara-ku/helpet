@@ -27,16 +27,19 @@ function ArticleDetail({
     const lazyImg = document.querySelectorAll('img');
 
     if ('IntersectionObserver' in window) {
-      const imgObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const img = entry.target;
-            img.src = img.dataset.lazySrc ?? img.src;
-            imgObserver.unobserve(img);
-            console.log(img);
-          }
-        });
-      });
+      const imgObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const img = entry.target;
+              img.src = img.dataset.lazySrc ?? img.src;
+              imgObserver.unobserve(img);
+              console.log(img);
+            }
+          });
+        },
+        { rootMargin: '0px 0px 300px 0px' }
+      );
 
       lazyImg.forEach(image => imgObserver.observe(image));
     }
