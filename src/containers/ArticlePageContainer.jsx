@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-
 import { useRouteMatch } from 'react-router-dom';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import ArticleDetail from '../components/Information/ArticleDetail';
 import Layout1 from '../components/Information/Layout1';
 
@@ -9,6 +9,7 @@ const ArticlePageContainer = () => {
   const { aidx } = match.params;
 
   const [article, setArticle] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(async () => {
     const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
@@ -38,6 +39,7 @@ const ArticlePageContainer = () => {
     ).data.article;
 
     setArticle(result);
+    setIsLoaded(true);
   }, []);
 
   const {
@@ -51,7 +53,7 @@ const ArticlePageContainer = () => {
     category_code: categoryCode,
   } = article;
 
-  return (
+  return isLoaded ? (
     <Layout1
       mainContent={
         <ArticleDetail
@@ -66,6 +68,10 @@ const ArticlePageContainer = () => {
         />
       }
     />
+  ) : (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>
+      <CircularProgress />
+    </div>
   );
 };
 
