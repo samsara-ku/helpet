@@ -57,7 +57,6 @@ function Home() {
         <div className="home__content__box popular">
           {articlePreviewList
             .filter((e, i) => i < 3)
-<<<<<<< HEAD
             .map((elem, eidx) => (
               <Link to={`./article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
@@ -67,17 +66,6 @@ function Home() {
                   <div className="home__content__post-col">
                     <div className="home__content__post-title">{elem.title}</div>
                     <div className="home__content__post-content">{elem.summary}</div>
-=======
-            .map(e => (
-              <Link to={`./article/${e.aidx}`}>
-                <div className="home__content__post">
-                  <div className="home__content__post-col">
-                    <img src={e.thumbnail} alt="" />
-                  </div>
-                  <div className="home__content__post-col">
-                    <div className="home__content__post-title">{e.title}</div>
-                    <div className="home__content__post-content">{e.summary}</div>
->>>>>>> 2f8ef4fd7ad30f8b36bf99c4068b701578990d05
                   </div>
                 </div>
               </Link>
@@ -89,7 +77,6 @@ function Home() {
         <div className="home__content__box essential">
           {articlePreviewList
             .filter((e, i) => i < 4)
-<<<<<<< HEAD
             .map((elem, eidx) => (
               <Link to={`./article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
@@ -98,16 +85,6 @@ function Home() {
                   </div>
                   <div className="home__content__post-col">
                     <div className="home__content__post-title">{elem.title}</div>
-=======
-            .map(e => (
-              <Link to={`./article/${e.aidx}`}>
-                <div className="home__content__post">
-                  <div className="home__content__post-col">
-                    <img src={e.thumbnail} alt="" />
-                  </div>
-                  <div className="home__content__post-col">
-                    <div className="home__content__post-title">{e.title}</div>
->>>>>>> 2f8ef4fd7ad30f8b36bf99c4068b701578990d05
                   </div>
                 </div>
               </Link>
@@ -119,7 +96,6 @@ function Home() {
         <div className="home__content__box etc">
           {articlePreviewList
             .filter((e, i) => i >= 5)
-<<<<<<< HEAD
             .map((elem, eidx) => (
               <Link to={`./article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
@@ -128,16 +104,6 @@ function Home() {
                   </div>
                   <div className="home__content__post-col">
                     <div className="home__content__post-title">{elem.title}</div>
-=======
-            .map(e => (
-              <Link to={`./article/${e.aidx}`}>
-                <div className="home__content__post">
-                  <div className="home__content__post-col">
-                    <img src={e.thumbnail} alt="" />
-                  </div>
-                  <div className="home__content__post-col">
-                    <div className="home__content__post-title">{e.title}</div>
->>>>>>> 2f8ef4fd7ad30f8b36bf99c4068b701578990d05
                   </div>
                 </div>
               </Link>
