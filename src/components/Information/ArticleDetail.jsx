@@ -23,6 +23,23 @@ function ArticleDetail({
       left: 0,
       behavior: 'smooth',
     });
+
+    const lazyImg = document.querySelectorAll('img');
+
+    if ('IntersectionObserver' in window) {
+      const imgObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target;
+            img.src = img.dataset.lazySrc ?? img.src;
+            imgObserver.unobserve(img);
+            console.log(img);
+          }
+        });
+      });
+
+      lazyImg.forEach(image => imgObserver.observe(image));
+    }
   }, []);
 
   const _content = { __html: content };
