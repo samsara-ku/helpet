@@ -1,0 +1,91 @@
+@import "../Information/variables.scss";
+
+.sign-in {
+  position: relative;
+  display: flex;
+
+  &-col {
+    padding: 30px;
+    min-width: 360px;
+    min-height: 460px;
+  }
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 15px;
+
+    div {
+      display: flex;
+      justify-content: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      border: none;
+      background-color: #eee;
+    }
+
+    &-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    &-title {
+      font-size: 30px;
+      font-weight: 800;
+    }
+
+    &-register {
+      display: flex;
+      margin: 20px 0 25px 0;
+      gap: 15px;
+
+      svg {
+        font-size: 30px;
+        transition: 0.25s ease;
+        cursor: pointer;
+
+        &:first-child {
+          &:hover {
+            color: #3b5998;
+          }
+        }
+
+        &:last-child {
+          &:hover {
+            color: #00acee;
+          }
+        }
+      }
+    }
+
+    &-forgot {
+      font-size: 14px;
+      margin: 10px 0;
+
+      u {
+        cursor: pointer;
+      }
+    }
+
+    &-button {
+      button {
+        font-size: 12px;
+        border-radius: 20px;
+        font-weight: 800;
+        border: none;
+        color: #ffffff;
+        background-color: #ff4b2b;
+        padding: 12px 45px;
+        letter-spacing: 1px;
+        transition: transform 80ms ease-in;
+      }
+    }
+  }
+}
