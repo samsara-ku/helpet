@@ -57,15 +57,15 @@ function Home() {
         <div className="home__content__box popular">
           {articlePreviewList
             .filter((e, i) => i < 3)
-            .map(e => (
-              <Link to={`./article/${e.aidx}`}>
+            .map((elem, eidx) => (
+              <Link to={`./article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
-                    <img src={e.thumbnail} alt="" />
+                    <img src={elem.thumbnail} alt="" />
                   </div>
                   <div className="home__content__post-col">
-                    <div className="home__content__post-title">{e.title}</div>
-                    <div className="home__content__post-content">{e.summary}</div>
+                    <div className="home__content__post-title">{elem.title}</div>
+                    <div className="home__content__post-content">{elem.summary}</div>
                   </div>
                 </div>
               </Link>
@@ -77,14 +77,14 @@ function Home() {
         <div className="home__content__box essential">
           {articlePreviewList
             .filter((e, i) => i < 4)
-            .map(e => (
-              <Link to={`./article/${e.aidx}`}>
+            .map((elem, eidx) => (
+              <Link to={`./article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
-                    <img src={e.thumbnail} alt="" />
+                    <img src={elem.thumbnail} alt="" />
                   </div>
                   <div className="home__content__post-col">
-                    <div className="home__content__post-title">{e.title}</div>
+                    <div className="home__content__post-title">{elem.title}</div>
                   </div>
                 </div>
               </Link>
@@ -96,14 +96,14 @@ function Home() {
         <div className="home__content__box etc">
           {articlePreviewList
             .filter((e, i) => i >= 5)
-            .map(e => (
-              <Link to={`./article/${e.aidx}`}>
+            .map((elem, eidx) => (
+              <Link to={`./article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
-                    <img src={e.thumbnail} alt="" />
+                    <img src={elem.thumbnail} alt="" />
                   </div>
                   <div className="home__content__post-col">
-                    <div className="home__content__post-title">{e.title}</div>
+                    <div className="home__content__post-title">{elem.title}</div>
                   </div>
                 </div>
               </Link>
