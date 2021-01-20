@@ -1,10 +1,5 @@
-$image: "http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg",
-  "http://www.saac.kr/images/kor09r-17-0380/main/main_visual02.jpg";
-
 .adopt__home {
   width: 100%;
-
-  /* Needed for when the area gets squished too far and there is content that can't be displayed */
   overflow: auto;
 
   .home__route-container {
@@ -101,7 +96,6 @@ $image: "http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg",
         padding: 20px;
         color: white;
         background-color: rgba(255, 255, 255, 0.137);
-
         transform: translate(-50%, -50%);
       }
     }
