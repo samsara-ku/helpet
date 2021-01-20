@@ -30,13 +30,15 @@ function Home() {
       {
         x: 0,
         opacity: 1,
+        scale: 1.2,
       },
       {
         x: `-100%`,
+        scale: 1,
         opacity: 0.5,
-        ease: Power3.easeOut,
         zIndex: 9,
         duration: 1,
+        ease: Power3.easeOut,
       }
     );
 
@@ -46,13 +48,15 @@ function Home() {
       {
         x: `100%`,
         opacity: 0.5,
+        scale: 1,
       },
       {
         x: 0,
         opacity: 1,
-        ease: Power3.easeOut,
         duration: 1,
         zIndex: 10,
+        scale: 1.2,
+        ease: Power3.easeOut,
         onComplete: () => {
           setIsAnimating(false);
         },
@@ -75,13 +79,15 @@ function Home() {
       {
         x: 0,
         opacity: 1,
+        scale: 1.2,
       },
       {
         x: `100%`,
+        scale: 1,
         opacity: 0.5,
-        ease: Power3.easeOut,
         zIndex: 9,
         duration: 1,
+        ease: Power3.easeOut,
       }
     );
 
@@ -91,13 +97,15 @@ function Home() {
       {
         x: `-100%`,
         opacity: 0.5,
+        scale: 1,
       },
       {
         x: 0,
         opacity: 1,
-        ease: Power3.easeOut,
         duration: 1,
+        scale: 1.2,
         zIndex: 10,
+        ease: Power3.easeOut,
         onComplete: () => {
           setIsAnimating(false);
         },
@@ -124,7 +132,7 @@ function Home() {
       if (!isHover) {
         nextSlide();
       }
-    }, 1000);
+    }, 1500);
 
     return () => {
       console.log(`clearTimeout(sto);`);
