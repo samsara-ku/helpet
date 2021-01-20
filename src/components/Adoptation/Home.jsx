@@ -114,11 +114,9 @@ function Home() {
   };
 
   const goSlide = e => {
-    console.log(e.target);
     const el = e.target;
 
     if (el.classList.contains('active')) {
-      console.log(`이미 현 화면입니다`);
       return 0;
     }
 
@@ -128,14 +126,12 @@ function Home() {
 
   useEffect(() => {
     const sto = setTimeout(() => {
-      console.log(`nextSlide();`);
       if (!isHover) {
         nextSlide();
       }
     }, 1500);
 
     return () => {
-      console.log(`clearTimeout(sto);`);
       clearTimeout(sto);
     };
   }, [testimonialList, nextSlide, isHover]);
