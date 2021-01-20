@@ -1,16 +1,13 @@
 .list-item {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  padding: 1rem;
   display: grid;
-  height: 100%;
   grid-template-rows: 1fr auto auto;
   gap: 4px;
+  height: 100%;
+  padding: 1rem;
 
   .image-wrapper {
-    object-fit: cover;
     max-height: 400px;
+    object-fit: cover;
 
     img {
       width: 100%;
