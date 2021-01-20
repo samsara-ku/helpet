@@ -1,42 +1,75 @@
 $image: "http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg",
   "http://www.saac.kr/images/kor09r-17-0380/main/main_visual02.jpg";
 
-.adopt .home {
-  padding: 30px;
+.adopt__home {
+  width: 100%;
 
-  > h1 {
-    margin-bottom: 50px;
-  }
+  /* Needed for when the area gets squished too far and there is content that can't be displayed */
+  overflow: auto;
 
-  &__route-container {
+  .home__route-container {
+    position: relative;
     display: flex;
-    gap: 40px;
-    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+
+    .arrow {
+      position: absolute;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-content: center;
+      justify-content: center;
+      height: 100%;
+      padding: 10px;
+      background-color: #8080801f;
+
+      &-left {
+        left: 0;
+      }
+
+      &-right {
+        right: 0;
+      }
+    }
 
     &-item {
+      position: absolute;
+      top: 0;
+      left: 0;
       display: flex;
       align-items: center;
-      min-height: 400px;
-      padding: 20px;
+      width: 100%;
+      height: 100%;
       border-radius: 4px;
       transition: transform 0.2s;
 
-      > h3 {
+      &.active {
+        z-index: 10;
+      }
+
+      > img {
+        width: 100%;
+        height: 100%;
+      }
+
+      h3 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
         margin: 30px;
+        padding: 20px;
         color: white;
-      }
+        background-color: rgba(255, 255, 255, 0.137);
 
-      &:hover {
-        transform: scale(1.05);
-      }
-
-      &.image1 {
-        background: no-repeat center/500% url(nth($image, 1));
-      }
-
-      &.image2 {
-        background: no-repeat center/500% url(nth($image, 2));
+        transform: translate(-50%, -50%);
       }
     }
+  }
+
+  > .controller {
+    position: relative;
+    display: flex;
+    height: 100%;
   }
 }
