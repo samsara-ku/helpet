@@ -1,7 +1,7 @@
 import './Home.scss';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { TimelineLite, Power3 } from 'gsap';
+import { TweenLite, Power3 } from 'gsap';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 
@@ -10,33 +10,98 @@ const MIN = 0;
 
 function Home() {
   let testimonialList = useRef(null);
-  const [state, setState] = useState(0); // 0 1
+  const [slideState, setSlideState] = useState(1); // 0 1
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const nextSlide = () => {
-    const prevState = state;
-    let nextState = 0;
-
-    if (state + 1 > MAX) {
-      setState(MIN);
-      nextState = MIN;
-    } else {
-      setState(state + 1);
-      nextState = state + 1;
+    if (isAnimating) {
+      return;
     }
+
+    const prevState = slideState;
+    const nextState = slideState + 1 > MAX ? MIN : slideState + 1;
+
+    setIsAnimating(true);
+    // 이전 화면 왼쪽으로 보내기
+    TweenLite.fromTo(
+      testimonialList.children[prevState],
+      {
+        x: 0,
+        opacity: 1,
+      },
+      {
+        x: `-100%`,
+        opacity: 0.5,
+        ease: Power3.easeOut,
+        zIndex: 9,
+        duration: 1,
+      }
+    );
+
+    // 다음화면 불러오기
+    TweenLite.fromTo(
+      testimonialList.children[nextState],
+      {
+        x: `100%`,
+        opacity: 0.5,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        ease: Power3.easeOut,
+        duration: 1,
+        zIndex: 10,
+        onComplete: () => {
+          setSlideState(nextState);
+          setIsAnimating(false);
+        },
+      }
+    );
   };
 
   const prevSlide = () => {
-    console.log(state);
-    const prevState = state;
-    let nextState = 0;
-
-    if (state - 1 < MIN) {
-      setState(MAX);
-      nextState = MAX;
-    } else {
-      setState(state - 1);
-      nextState = state - 1;
+    if (isAnimating) {
+      return;
     }
+    const prevState = slideState;
+    const nextState = slideState - 1 < MIN ? MAX : slideState - 1;
+
+    setIsAnimating(true);
+    // 이전 화면 오른쪽으로 보내기
+    TweenLite.fromTo(
+      testimonialList.children[prevState],
+      {
+        x: 0,
+        opacity: 1,
+      },
+      {
+        x: `100%`,
+        opacity: 0.5,
+        ease: Power3.easeOut,
+        zIndex: 9,
+        duration: 1,
+      }
+    );
+
+    // 다음화면 불러오기
+    TweenLite.fromTo(
+      testimonialList.children[nextState],
+      {
+        x: `-100%`,
+        opacity: 0.5,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        ease: Power3.easeOut,
+        duration: 1,
+        zIndex: 10,
+        onComplete: () => {
+          setSlideState(nextState);
+          setIsAnimating(false);
+        },
+      }
+    );
   };
 
   return (
@@ -47,14 +112,14 @@ function Home() {
           testimonialList = el;
         }}
       >
-        <div className={`home__route-container-item${state === 0 ? ' active' : ''}`}>
+        <div className={`home__route-container-item${slideState === 0 ? ' active' : ''}`}>
           <img src="http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg" alt="" />
           <Link to="/information">
             <h3>입양 정보 바로가기</h3>
           </Link>
         </div>
 
-        <div className={`home__route-container-item${state === 1 ? ' active' : ''}`}>
+        <div className={`home__route-container-item${slideState === 1 ? ' active' : ''}`}>
           <img src="http://www.saac.kr/images/kor09r-17-0380/main/main_visual02.jpg" alt="" />
           <Link to="/review">
             <h3>입양 후기 바로가기</h3>
