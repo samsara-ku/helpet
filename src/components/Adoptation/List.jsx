@@ -1,6 +1,7 @@
 import './List.scss';
 import React from 'react';
 import ListItem from './ListItem';
+import Pagination from '../Information/Pagination';
 
 function List() {
   return (
@@ -8,10 +9,10 @@ function List() {
       <div className="category">
         <div className="category-title">입양</div>
         <div className="category-list">
-          <div className="category-item active">입양됐어요</div>
-          <div className="category-item">입양후기</div>
+          <div className="category-list-item active">입양됐어요</div>
+          <div className="category-list-item">입양후기</div>
         </div>
-        <div className="notice">
+        <div className="notice border">
           <div className="notice-title">입양센터</div>
           <div className="notice-content">
             사지말고
@@ -25,6 +26,7 @@ function List() {
         </div>
       </div>
       <div className="list-container">
+        <div className="title">입양됐어요</div>
         <div className="list">
           {[1, 2, 3, 4, 5, 6].map(value => (
             <ListItem
@@ -36,11 +38,38 @@ function List() {
             />
           ))}
         </div>
-        <div className="pagination">
-          <span>여기는 페이지 네이션 위치</span>
+
+        <div className="pagination-container">
+          <Pagination current="6" total="10" baseUrl="" />
         </div>
-        <div className="search-form">
-          <span>여기는 검색창 위치</span>
+
+        <div className="list-container__search-form">
+          <div className="mode">
+            <select>
+              <option selected>제목</option>
+              <option>내용</option>
+              <option>이름</option>
+            </select>
+          </div>
+
+          <div className="input-keyword">
+            <input
+              type="text"
+              placeholder=". . ."
+              onChange={e => {
+                console.log(e.target.value);
+              }}
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              console.log(12);
+            }}
+          >
+            검색
+          </button>
         </div>
       </div>
     </div>

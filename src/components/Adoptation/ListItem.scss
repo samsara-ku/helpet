@@ -1,4 +1,23 @@
 .list-item {
   display: flex;
-  background-color: rgb(92, 92, 92);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+
+  .image-wrapper {
+    img {
+      width: 100%;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+  .meta {
+    display: flex;
+    gap: 5px;
+    color: rgb(199, 199, 199);
+    font-size: small;
+  }
 }
