@@ -10,12 +10,8 @@ function List() {
       <div className="category">
         <div className="category-title">입양</div>
         <div className="category-list">
-          <Link to="/imformation">
-            <div className="category-list-item active">입양됐어요</div>
-          </Link>
-          <Link to="/review">
-            <div className="category-list-item">입양후기</div>
-          </Link>
+          <div className="category-list-item active">입양됐어요</div>
+          <div className="category-list-item">입양후기</div>
         </div>
         <div className="notice border">
           <div className="notice-title">입양센터</div>
