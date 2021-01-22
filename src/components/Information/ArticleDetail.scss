@@ -1,21 +1,21 @@
 @import "./variables";
 
 .article-detail {
-  max-width: 1247px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
+  max-width: 1247px;
   margin: auto;
+  padding: 20px;
 
   &__btns {
     display: flex;
     justify-content: space-between;
 
     button {
-      color: $grayColor;
       display: flex;
-      align-items: center;
       gap: 10px;
+      align-items: center;
+      color: $grayColor;
 
       span {
         font-size: small;
@@ -26,26 +26,19 @@
   &__breadcrumb {
     display: flex;
     align-items: center;
+    margin-bottom: 20px;
     color: $grayColor;
     font-size: small;
-    margin-bottom: 20px;
 
     svg {
-      font-size: inherit;
       margin-right: 5px;
+      font-size: inherit;
     }
   }
 
   &__meta {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__meta__date::before {
-    content: "\2022";
-    color: $grayColor;
-    margin: 0 3px 0 5px;
-    display: inline-block;
   }
 
   &__content {
@@ -61,45 +54,45 @@
 
     > div {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
+      gap: 20px;
       justify-content: center;
 
       > a > div {
         display: flex;
         flex-direction: column;
-        margin-bottom: 20px;
         width: 320px;
+        margin-bottom: 20px;
 
         .img-wrapper {
           overflow: hidden;
           border-radius: 2px;
 
           > img {
-            background-color: gray;
             max-width: 100%;
             height: auto;
+            background-color: gray;
           }
         }
 
         .title {
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
           margin: 3px 0;
+          overflow: hidden;
           font-weight: 600;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
 
         .time {
-          margin: 3px 0;
           display: flex;
           align-items: center;
-          font-size: small;
+          margin: 3px 0;
           color: $grayColor;
+          font-size: small;
 
           > svg {
-            font-size: inherit;
             margin: 0 5px;
+            font-size: inherit;
           }
         }
       }
