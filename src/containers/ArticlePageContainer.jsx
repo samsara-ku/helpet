@@ -12,6 +12,8 @@ const ArticlePageContainer = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(async () => {
+    setIsLoaded(false);
+
     const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     const query = `
     {
@@ -40,7 +42,7 @@ const ArticlePageContainer = () => {
 
     setArticle(result);
     setIsLoaded(true);
-  }, []);
+  }, [aidx]);
 
   const {
     title,
