@@ -16,6 +16,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <Main />
+            <Footer />
           </Route>
 
           <Route exact path="/home">
@@ -24,20 +25,20 @@ function App() {
             <Footer />
           </Route>
 
-          <Route path="/adopt">
-            <Header />
-            <AdoptationIndex />
-            <Footer />
-          </Route>
-
-          <Route path="/sungjae-test">
+          <Route exact path="/home/articles">
             <Header />
             <Articles />
           </Route>
 
-          <Route path="/article/:aidx">
+          <Route exact path="/home/articles/article/:aidx">
             <Header />
             <ArticlePageContainer />
+          </Route>
+    
+          <Route path="/adopt">
+            <Header />
+            <AdoptationIndex />
+            <Footer />
           </Route>
 
           <Route path="*">

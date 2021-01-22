@@ -3,25 +3,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 
-function RelatedArticle() {
+function RelatedArticle({ articleList }) {
   return (
     <div className="related-article border">
       <h4>관련 글</h4>
       <div>
-        {Array(10)
-          .fill('')
-          .map((i, idx) => (
-            <Link key={i + idx} to="/">
+        {articleList
+          .filter(e => e.aidx <= 124)
+          .map((elem, idx) => (
+            <Link key={idx} to={`/home/articles/article/${elem.aidx}`}>
               <div>
                 <div className="img-wrapper">
-                  <img src={`https://via.placeholder.com/390x220?text=${i + idx}`} alt="" />
+                  <img src={elem.thumbnail} alt="" />
                 </div>
-                <span className="title">
-                  제목입니다람쥐제목입니다람쥐제목입니다람쥐제목입니다람쥐
-                </span>
+                <span className="title">{elem.title}</span>
                 <div className="time">
                   <QueryBuilderIcon />
-                  <span className="time">2020.12.24</span>
+                  <span className="time">{elem.insert_date.slice(0, 10)}</span>
                 </div>
               </div>
             </Link>

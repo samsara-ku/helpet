@@ -18,7 +18,7 @@ import { Link } from 'react-router-dom';
 
 function Article({ aidx, title, summary, thumbnail, insertDate }) {
   return (
-    <Link to={`./article/${aidx}`}>
+    <Link to={`./articles/article/${aidx}`}>
       <div className="article">
         <div className="article__image-wrapper">
           <img src={thumbnail} alt="no thumbnail" />

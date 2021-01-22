@@ -1,10 +1,28 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+// Above things are disable something about Web accessibility
 import React, { useState } from 'react';
 import './Menu.scss';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
+import HiddenMenu from './HiddenMenu';
+import SignIn from './SignIn';
 
-function Header() {
-  const [expand, setExpand] = useState(false);
+function Menu({ articles }) {
+  const makeCategory = prefix => [
+    `${prefix} 건강`,
+    `${prefix} 행동`,
+    `${prefix} 음식`,
+    `${prefix} 훈련`,
+    `${prefix} 종류`,
+  ];
+
+  const [open, setOpen] = useState(false);
+  const [hover, setHover] = useState([false, false]);
+
+  const handleHover = index => {
+    setHover(hover.map((e, i) => (i === index ? !e : e)));
+  };
 
   return (
     <div className="menu">
@@ -15,265 +33,38 @@ function Header() {
           </div>
         </div>
         <div className="menu__col">
-          <div className="menu__col__choice">
+          <div
+            className="menu__col__choice"
+            onMouseEnter={() => handleHover(0)}
+            onMouseLeave={() => {
+              setHover([false, false, false]);
+            }}
+          >
             강아지 연구소
             <ArrowDropDownIcon />
-            <div className="menu__hidden">
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-              </div>
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HiddenMenu category={makeCategory('강아지')} articles={articles} visible={hover[0]} />
           </div>
-          <div className="menu__col__choice">
+          <div
+            className="menu__col__choice"
+            onMouseEnter={() => handleHover(1)}
+            onMouseLeave={() => {
+              setHover([false, false, false]);
+            }}
+          >
             고양이 연구소
             <ArrowDropDownIcon />
-            <div className="menu__hidden">
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-              </div>
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <HiddenMenu category={makeCategory('고양이')} articles={articles} visible={hover[1]} />
           </div>
-          <div className="menu__col__choice">
-            생활 연구소
-            <ArrowDropDownIcon />
-            <div className="menu__hidden">
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-              </div>
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="menu__col__choice" onClick={() => setOpen(true)}>
+            로그인
           </div>
-          <div className="menu__col__choice">
-            몰라 연구소
-            <ArrowDropDownIcon />
-            <div className="menu__hidden">
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-              </div>
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="menu__col__choice">
-            히히 연구소
-            <ArrowDropDownIcon />
-            <div className="menu__hidden">
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-                <div className="menu__hidden-choice">12345</div>
-              </div>
-              <div className="menu__hidden-col">
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-                <div className="menu__hidden-post">
-                  <div className="post-col">
-                    <img src="../../../p" alt="" />
-                  </div>
-                  <div className="post-col">
-                    <div className="title">제목</div>
-                    <div className="contents">
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                      내용입니다.내용입니다.내용입니다.내용입니다.내용입니다.
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div className="menu__col__choice">Q&A</div>
         </div>
       </div>
+
+      <SignIn isOpen={open} close={() => setOpen(false)} />
     </div>
   );
 }
 
-export default Header;
+export default Menu;
