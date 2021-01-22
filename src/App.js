@@ -24,12 +24,12 @@ function App() {
             <Footer />
           </Route>
 
-          <Route path="/sungjae-test">
+          <Route exact path="/home/articles">
             <Header />
             <Articles />
           </Route>
 
-          <Route path="/article/:aidx">
+          <Route exact path="/home/articles/article/:aidx">
             <Header />
             <ArticlePageContainer />
           </Route>

@@ -58,7 +58,7 @@ function Home() {
           {articlePreviewList
             .filter((e, i) => i < 3)
             .map((elem, eidx) => (
-              <Link to={`./article/${elem.aidx}`} key={eidx}>
+              <Link to={`./home/articles/article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
                     <img src={elem.thumbnail} alt="" />
@@ -78,7 +78,7 @@ function Home() {
           {articlePreviewList
             .filter((e, i) => i < 4)
             .map((elem, eidx) => (
-              <Link to={`./article/${elem.aidx}`} key={eidx}>
+              <Link to={`./home/articles/article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
                     <img src={elem.thumbnail} alt="" />
@@ -97,7 +97,7 @@ function Home() {
           {articlePreviewList
             .filter((e, i) => i >= 5)
             .map((elem, eidx) => (
-              <Link to={`./article/${elem.aidx}`} key={eidx}>
+              <Link to={`./home/articles/article/${elem.aidx}`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
                     <img src={elem.thumbnail} alt="" />

@@ -11,7 +11,7 @@ function RelatedArticle({ articleList }) {
         {articleList
           .filter(e => e.aidx <= 124)
           .map((elem, idx) => (
-            <Link key={idx} to={`/article/${elem.aidx}`}>
+            <Link key={idx} to={`/home/articles/article/${elem.aidx}`}>
               <div>
                 <div className="img-wrapper">
                   <img src={elem.thumbnail} alt="" />
