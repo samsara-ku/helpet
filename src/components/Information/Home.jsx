@@ -43,7 +43,7 @@ function Home() {
 
   return (
     <div className="home">
-      <Menu />
+      <Menu articles={articlePreviewList} />
       <div className="home__header">
         <div className="home__header__logo">
           <GradeIcon />
