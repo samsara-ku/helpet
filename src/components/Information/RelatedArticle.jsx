@@ -19,7 +19,7 @@ function RelatedArticle({ articleList }) {
                 <span className="title">{elem.title}</span>
                 <div className="time">
                   <QueryBuilderIcon />
-                  <span className="time">{elem.insert_date}</span>
+                  <span className="time">{elem.insert_date.slice(0, 10)}</span>
                 </div>
               </div>
             </Link>

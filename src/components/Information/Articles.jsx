@@ -51,7 +51,7 @@ function Articles() {
               title={title}
               summary={summary}
               thumbnail={thumbnail}
-              insertDate={insertDate}
+              insertDate={insertDate.slice(0, 10)}
             />
           );
         })}

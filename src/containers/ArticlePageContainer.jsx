@@ -63,7 +63,7 @@ const ArticlePageContainer = () => {
           content={content}
           countView={countView}
           countLike={countLike}
-          insertDate={insertDate}
+          insertDate={insertDate.slice(0, 10)}
           updateDate={updateDate}
           insertUidx={insertUidx}
           categoryCode={categoryCode}
