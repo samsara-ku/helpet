@@ -92,7 +92,7 @@ function Main() {
               여러분들의 손길이 필요한 동물들이 있습니다. <br />
               아이들에게 행복한 시간을 선물해주세요.
             </div>
-            <Link to="home">
+            <Link to="/adopt">
               <div role="button" className="button">
                 바로가기
               </div>
