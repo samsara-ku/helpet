@@ -34,7 +34,7 @@ function App() {
             <Header />
             <ArticlePageContainer />
           </Route>
-    
+
           <Route path="/adopt">
             <Header />
             <AdoptationIndex />
