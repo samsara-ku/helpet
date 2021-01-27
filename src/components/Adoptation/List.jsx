@@ -1,5 +1,6 @@
 import './List.scss';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import Pagination from '../Information/Pagination';
 
@@ -9,8 +10,12 @@ function List() {
       <div className="category">
         <div className="category-title">입양</div>
         <div className="category-list">
-          <div className="category-list-item active">입양됐어요</div>
-          <div className="category-list-item">입양후기</div>
+          <Link to="/imformation">
+            <div className="category-list-item active">입양됐어요</div>
+          </Link>
+          <Link to="/review">
+            <div className="category-list-item">입양후기</div>
+          </Link>
         </div>
         <div className="notice border">
           <div className="notice-title">입양센터</div>
@@ -31,8 +36,9 @@ function List() {
           {[1, 2, 3, 4, 5, 6].map(value => (
             <ListItem
               key={value}
+              aidx={value}
               title={value}
-              thumbnail={`https://via.placeholder.com/390x220?text=${value}`}
+              thumbnail={`https://via.placeholder.com/390x${value}20?text=${value}`}
               insertDate={value}
               countView={value}
             />
