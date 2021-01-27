@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function HiddenMenu({ category, articles, visible }) {
   return (
-    <div className={`hidden-menu ${visible ? ' visible' : ''}`}>
+    <div className={`hidden-menu${visible ? ' visible' : ''}`}>
       <div className="hidden-menu__row">
         <ul className="hidden-menu-category">
           {category.map((e, i) => (

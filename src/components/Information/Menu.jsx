@@ -20,10 +20,6 @@ function Menu({ articles }) {
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState([false, false]);
 
-  const handleHover = index => {
-    setHover(hover.map((e, i) => (i === index ? !e : e)));
-  };
-
   return (
     <div className="menu">
       <div className="menu__row">
@@ -35,9 +31,9 @@ function Menu({ articles }) {
         <div className="menu__col">
           <div
             className="menu__col__choice"
-            onMouseEnter={() => handleHover(0)}
+            onMouseEnter={() => setHover([true, false])}
             onMouseLeave={() => {
-              setHover([false, false, false]);
+              setHover([false, false]);
             }}
           >
             강아지 연구소
@@ -46,9 +42,9 @@ function Menu({ articles }) {
           </div>
           <div
             className="menu__col__choice"
-            onMouseEnter={() => handleHover(1)}
+            onMouseEnter={() => setHover([false, true])}
             onMouseLeave={() => {
-              setHover([false, false, false]);
+              setHover([false, false]);
             }}
           >
             고양이 연구소
