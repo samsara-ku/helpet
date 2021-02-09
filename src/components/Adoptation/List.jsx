@@ -4,14 +4,22 @@ import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import Pagination from '../Information/Pagination';
 
-function List() {
+function List({ category = 'information' }) {
   return (
     <div className="adopt__list">
       <div className="category">
         <div className="category-title">입양</div>
         <div className="category-list">
-          <div className="category-list-item active">입양됐어요</div>
-          <div className="category-list-item">입양후기</div>
+          <Link to="/information/list">
+            <div className={`category-list-item${category === 'information' ? ' active' : ''}  `}>
+              입양됐어요
+            </div>
+          </Link>
+          <Link to="/review/list">
+            <div className={`category-list-item${category === 'review' ? ' active' : ''}  `}>
+              입양후기
+            </div>
+          </Link>
         </div>
         <div className="notice border">
           <div className="notice-title">입양센터</div>
@@ -27,7 +35,7 @@ function List() {
         </div>
       </div>
       <div className="list-container">
-        <div className="title">입양됐어요</div>
+        <div className="title">{category === 'review' ? '입양후기' : '입양됐어요'}</div>
         <div className="list">
           {[1, 2, 3, 4, 5, 6].map(value => (
             <ListItem
