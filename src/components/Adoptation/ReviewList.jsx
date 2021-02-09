@@ -1,11 +1,8 @@
 import React from 'react';
+import List from './List';
 
 function ReviewList() {
-  return (
-    <div>
-      <span>review list</span>
-    </div>
-  );
+  return <List category="review" />;
 }
 
 export default ReviewList;

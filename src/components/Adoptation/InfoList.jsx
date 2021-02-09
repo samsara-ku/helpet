@@ -1,11 +1,8 @@
 import React from 'react';
+import List from './List';
 
 function InfoList() {
-  return (
-    <div>
-      <span>info list</span>
-    </div>
-  );
+  return <List />;
 }
 
 export default InfoList;
