@@ -8,6 +8,7 @@ import ArticlePageContainer from './containers/ArticlePageContainer';
 import Articles from './components/Information/Articles';
 import Main from './components/Landing/Main';
 import AdoptationIndex from './components/Adoptation/Index';
+import StoreIndex from './components/Store/index';
 
 function App() {
   return (
@@ -38,6 +39,12 @@ function App() {
           <Route path="/adopt">
             <Header />
             <AdoptationIndex />
+            <Footer />
+          </Route>
+
+          <Route path="/store">
+            <Header />
+            <StoreIndex />
             <Footer />
           </Route>
 

@@ -77,7 +77,7 @@ function Main() {
               첫 만남부터 이별까지. <br />
               반려동물 주인으로서 꼭 필요한 정보들을 모았습니다.
             </div>
-            <Link to="home">
+            <Link to="/home">
               <div role="button" className="button">
                 바로가기
               </div>
@@ -107,7 +107,7 @@ function Main() {
               요즘 대세 집사들은 모두 갖고 있다는 그것!
               <br /> 여기서 확인해보세요!
             </div>
-            <Link to="home">
+            <Link to="/store">
               <div role="button" className="button">
                 바로가기
               </div>
