@@ -1,0 +1,29 @@
+.store__header {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100px;
+  padding: 0 150px;
+
+  &__col {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__item {
+    padding: 13px 20px;
+    font-weight: 600;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+
+    &:first-child {
+      display: flex;
+      align-items: center;
+    }
+
+    &:hover {
+      transform: translateY(10px);
+    }
+  }
+}
