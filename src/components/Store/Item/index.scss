@@ -1,0 +1,55 @@
+@import "../variables";
+
+.store__item {
+  margin: 0 20px 45px 0;
+  cursor: pointer;
+
+  .item {
+    &__thumbnail {
+      width: 265px;
+      height: 265px;
+      margin-bottom: 15px;
+      object-fit: contain;
+    }
+
+    &__title {
+      min-height: 48px;
+      padding: 8px 0;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 19.2px;
+    }
+
+    &__rating {
+      .MuiSvgIcon-root {
+        width: 18px;
+        margin: -1.5px;
+        color: $mainColor;
+      }
+    }
+
+    &__review {
+      color: $mainColor;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &__price {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__button {
+      button {
+        padding: 8px 16px;
+        font-weight: 500;
+        font-size: 14px;
+        background-color: $mainColor;
+        border-radius: 20px;
+      }
+    }
+  }
+}
