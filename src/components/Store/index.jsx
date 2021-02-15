@@ -7,10 +7,18 @@ function index() {
   return (
     <div className="store">
       <Router basename="/store">
+        <Header />
         <Switch>
           <Route exact path="/">
-            <Header />
             <Home />
+          </Route>
+
+          <Route exact path="/category/:value">
+            <div>This area is for category area</div>
+          </Route>
+
+          <Route exact path="*">
+            <div>This area is not implemented</div>
           </Route>
         </Switch>
       </Router>

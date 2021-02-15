@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.scss';
+import { Link } from 'react-router-dom';
 import Item from '../Item';
 
 function Home() {
@@ -44,7 +45,9 @@ function Home() {
           ))}
         </div>
         <div className="button-wrapper">
-          <button type="button">더 보기 +</button>
+          <Link to="/category/all/">
+            <button type="button">더 보기 +</button>
+          </Link>
         </div>
       </div>
       <div className="store__home__row">
@@ -58,7 +61,9 @@ function Home() {
           ))}
         </div>
         <div className="button-wrapper">
-          <button type="button">더 보기 +</button>
+          <Link to="/category/goods/">
+            <button type="button">더 보기 +</button>
+          </Link>
         </div>
       </div>
       <div className="store__home__row">
@@ -68,20 +73,28 @@ function Home() {
         <div className="title">다양한 카테고리</div>
         <div className="content-wrapper">
           <div className="content">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/7/70/Dog_silhouette.svg"
-              alt="thumbnail"
-            />
+            <Link to="/category/dog/">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/70/Dog_silhouette.svg"
+                alt="thumbnail"
+              />
+            </Link>
             <span>강아지 용품</span>
-            <button type="button">보러가기</button>
+            <Link to="/category/dog/">
+              <button type="button">보러가기</button>
+            </Link>
           </div>
           <div className="content">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png"
-              alt="thumbnail"
-            />
+            <Link to="/category/cat/">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Cat_silhouette.svg/400px-Cat_silhouette.svg.png"
+                alt="thumbnail"
+              />
+            </Link>
             <span>고양이 용품</span>
-            <button type="button">보러가기</button>
+            <Link to="/category/cat/">
+              <button type="button">보러가기</button>
+            </Link>
           </div>
         </div>
       </div>
