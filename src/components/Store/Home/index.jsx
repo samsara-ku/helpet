@@ -10,28 +10,24 @@ function Home() {
         'https://koozpetshop.com/web/product/medium/202012/ed2915d1f708af93e24a07ed03088d5e.jpg',
       price: '45,000',
       rating: 3,
-      reviewNum: '12',
     },
     {
       title: '고양이용 사료',
       image: 'https://koozpetshop.com/web/product/medium/2b122.jpg',
       price: '24,000',
       rating: 4,
-      reviewNum: '1',
     },
     {
       title: '강아지용 스낵볼',
       image: 'https://koozpetshop.com/web/product/medium/tobpet1222_sum_009.jpg',
       price: '9,550',
       rating: 1,
-      reviewNum: '3',
     },
     {
       title: '강아지용 노즈워크 동글과녁',
       image: 'https://koozpetshop.com/web/product/medium/tobpet_210114_sum_012.jpg',
       price: '32,000',
       rating: 2,
-      reviewNum: '0',
     },
   ];
 
@@ -44,14 +40,7 @@ function Home() {
         <div className="title">반려동물 용품</div>
         <div className="content-wrapper">
           {mockData.map((e, i) => (
-            <Item
-              key={i}
-              title={e.title}
-              image={e.image}
-              price={e.price}
-              reviewNum={e.reviewNum}
-              rating={e.rating}
-            />
+            <Item key={i} title={e.title} image={e.image} price={e.price} rating={e.rating} />
           ))}
         </div>
         <div className="button-wrapper">
@@ -65,14 +54,7 @@ function Home() {
         <div className="title">굿즈</div>
         <div className="content-wrapper">
           {mockData.map((e, i) => (
-            <Item
-              key={i}
-              title={e.title}
-              image={e.image}
-              price={e.price}
-              reviewNum={e.reviewNum}
-              rating={e.rating}
-            />
+            <Item key={i} title={e.title} image={e.image} price={e.price} rating={e.rating} />
           ))}
         </div>
         <div className="button-wrapper">

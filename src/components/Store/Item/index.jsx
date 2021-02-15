@@ -3,7 +3,7 @@ import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import './index.scss';
 
-function Item({ image, title, price, reviewNum, rating }) {
+function Item({ image, title, price, rating }) {
   return (
     <div className="store__item">
       <img className="item__thumbnail" src={image} alt="thumbnail" />
@@ -16,7 +16,6 @@ function Item({ image, title, price, reviewNum, rating }) {
           <StarIcon key={i} />
         ))}
       </div>
-      <div className="item__review">(리뷰 수: {reviewNum})</div>
       <div className="item__price">₩{price}</div>
       <div className="item__button">
         <button type="button">장바구니</button>
