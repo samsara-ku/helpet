@@ -17,6 +17,10 @@ function index() {
             <div>This area is for category area</div>
           </Route>
 
+          <Route exact path="/product/:value">
+            <div>This area is for product area</div>
+          </Route>
+
           <Route exact path="*">
             <div>This area is not implemented</div>
           </Route>
