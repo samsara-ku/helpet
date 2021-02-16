@@ -12,9 +12,6 @@ function Header() {
         <Link to="/mypage/">
           <div className="store__header__item">MY PAGE</div>
         </Link>
-        <Link to="/about/">
-          <div className="store__header__item">ABOUT</div>
-        </Link>
       </div>
     </div>
   );
