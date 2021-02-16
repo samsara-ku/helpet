@@ -2,11 +2,12 @@
   display: grid;
   flex: 1;
   grid-template-columns: minmax(150px, 25%) 1fr;
+  max-width: 1400px;
 
   .category {
     display: flex;
     flex-direction: column;
-    padding: 10px 25px;
+    padding: 30px 25px;
 
     &-title {
       padding-bottom: 20px;
