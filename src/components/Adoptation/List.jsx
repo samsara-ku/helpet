@@ -12,7 +12,7 @@ function List({ category = 'information' }) {
         <div className="category-list">
           <Link to="/information/list">
             <div className={`category-list-item${category === 'information' ? ' active' : ''}  `}>
-              입양됐어요
+              센터 아이들
             </div>
           </Link>
           <Link to="/review/list">
@@ -35,7 +35,7 @@ function List({ category = 'information' }) {
         </div>
       </div>
       <div className="list-container">
-        <div className="title">{category === 'review' ? '입양후기' : '입양됐어요'}</div>
+        <div className="title">{category === 'review' ? '입양후기' : '센터 아이들'}</div>
         <div className="list">
           {[1, 2, 3, 4, 5, 6].map(value => (
             <ListItem
