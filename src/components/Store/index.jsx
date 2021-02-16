@@ -1,8 +1,9 @@
 import React from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Home from './Home/index';
-import Header from './Header/index';
-import Category from './Category/index';
+import Home from './Home';
+import Header from './Header';
+import Category from './Category';
+import Product from './Product';
 
 function index() {
   return (
@@ -19,7 +20,7 @@ function index() {
           </Route>
 
           <Route exact path="/product/:value">
-            <div>This area is for product area</div>
+            <Product />
           </Route>
 
           <Route exact path="*">
