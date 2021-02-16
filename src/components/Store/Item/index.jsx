@@ -5,6 +5,19 @@ import './index.scss';
 import { Link } from 'react-router-dom';
 
 function Item({ image, title, price, rating }) {
+  const handleItem = () => {
+    const { localStorage } = window;
+    const amount = parseInt(localStorage.getItem(title));
+
+    if (amount) {
+      localStorage.setItem(title, amount + 1);
+    } else {
+      localStorage.setItem(title, 1);
+    }
+
+    console.log(amount);
+  };
+
   return (
     <div className="store__item">
       <Link to={`/product/${title}/`}>
@@ -21,7 +34,9 @@ function Item({ image, title, price, rating }) {
       </div>
       <div className="item__price">₩{price}</div>
       <div className="item__button">
-        <button type="button">장바구니</button>
+        <button type="button" onClick={handleItem}>
+          장바구니
+        </button>
       </div>
     </div>
   );
