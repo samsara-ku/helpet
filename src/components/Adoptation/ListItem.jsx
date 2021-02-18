@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function ListItem({ aidx, title, thumbnail, insertDate, countView }) {
   return (
-    <Link to={`./adopt/information/${aidx}`}>
+    <Link to={`/information/list/${aidx}`}>
       <div className="list-item border">
         <div className="image-wrapper">
           <img src={thumbnail} alt="no thumbnail" />

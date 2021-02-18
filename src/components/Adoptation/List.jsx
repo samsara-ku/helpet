@@ -1,10 +1,50 @@
 import './List.scss';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import Pagination from '../Information/Pagination';
 
+const categoryCodeMap = new Map([
+  ['information', '300'],
+  ['review', '400'],
+]);
+
 function List({ category = 'information' }) {
+  const [articlePreviewList, setArticlePreviewList] = useState([]);
+
+  useEffect(async () => {
+    const endpoint = 'http://localhost:5000/graphql';
+    // const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
+    const query = `
+    {
+      articlesv2(category_code: "${categoryCodeMap.get(category)}" ) {
+        title,
+        aidx,
+        count_view,
+        count_like,
+        insert_date,
+        thumbnail,
+        insert_uidx,
+        category_code,
+        },
+    }
+    `;
+
+    // fetch 로 graphql 요청 보내기
+    // 결과로 받는 객체 data.{쿼리객체명} 을 적으면 결과를 꺼낼 수 있음.
+    const result = (
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query }),
+      }).then(res => res.json())
+    ).data.articlesv2;
+
+    console.log(result);
+
+    setArticlePreviewList(result);
+  }, []);
+
   return (
     <div className="adopt__list">
       <div className="category">
@@ -37,16 +77,27 @@ function List({ category = 'information' }) {
       <div className="list-container">
         <div className="title">{category === 'review' ? '입양후기' : '센터 아이들'}</div>
         <div className="list">
-          {[1, 2, 3, 4, 5, 6].map(value => (
-            <ListItem
-              key={value}
-              aidx={value}
-              title={value}
-              thumbnail={`https://via.placeholder.com/390x${value}20?text=${value}`}
-              insertDate={value}
-              countView={value}
-            />
-          ))}
+          {articlePreviewList.map(item => {
+            const {
+              aidx,
+              title,
+              // summary,
+              thumbnail,
+              insert_date: insertDate,
+              count_view: countView,
+            } = item;
+
+            return (
+              <ListItem
+                key={aidx}
+                aidx={aidx}
+                title={title}
+                thumbnail={thumbnail}
+                insertDate={insertDate.slice(0, 10)}
+                countView={countView}
+              />
+            );
+          })}
         </div>
 
         <div className="pagination-container">
