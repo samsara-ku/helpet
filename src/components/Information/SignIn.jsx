@@ -10,9 +10,18 @@ function SignIn({ isOpen, close }) {
     email: '',
     password: '',
   });
+  const [resultMsgState, setResultMsgState] = useState(' ');
 
   const onSigninHandler = async () => {
     console.log(formState);
+
+    // 폼 값 유효성 체크
+    const { email, password } = formState;
+    if (!(email.length > 1 && password.length > 1)) {
+      setResultMsgState(`입력폼을 채워주세요`);
+      return;
+    }
+
     const result = await fetch(`http://localhost:5000/signin`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -20,6 +29,12 @@ function SignIn({ isOpen, close }) {
     }).then(res => res.json());
 
     console.log(result);
+
+    if (result.msg === 'good') {
+      close();
+    } else {
+      setResultMsgState('로그인 실패');
+    }
   };
 
   const onChangeHandler = (name, value) => {
@@ -63,6 +78,7 @@ function SignIn({ isOpen, close }) {
                 }}
               />
             </div>
+            <div className="sign-in__login-msg">{resultMsgState}</div>
             <div className="sign-in__login-forgot">
               <u>비밀번호</u>를 잊으셨나요?
             </div>
