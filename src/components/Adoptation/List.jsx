@@ -1,6 +1,5 @@
 import './List.scss';
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import ListItem from './ListItem';
 import Pagination from '../Information/Pagination';
 
