@@ -4,6 +4,7 @@ import Home from './Home';
 import Header from './Header';
 import Category from './Category';
 import Product from './Product';
+import Mypage from './Mypage';
 
 function index() {
   return (
@@ -21,6 +22,10 @@ function index() {
 
           <Route exact path="/product/:value">
             <Product />
+          </Route>
+
+          <Route exact path="/mypage/">
+            <Mypage />
           </Route>
 
           <Route exact path="*">

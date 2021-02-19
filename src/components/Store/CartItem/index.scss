@@ -1,0 +1,51 @@
+@import "../variables";
+
+.store__cartitem {
+  display: flex;
+  border: 1px solid lightgray;
+
+  &-image {
+    padding: 10px;
+
+    img {
+      width: 200px;
+    }
+  }
+
+  &-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 20px 20px 20px;
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 18px;
+
+    &::before {
+      content: "상품명: ";
+    }
+  }
+
+  &-amount {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    button {
+      padding: 2px 4px;
+      border: 1px solid $grayColor;
+    }
+
+    &::before {
+      content: "수량: ";
+    }
+  }
+
+  &-price {
+    &::before {
+      content: "합계 금액: ";
+    }
+  }
+}
