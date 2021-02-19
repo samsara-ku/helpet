@@ -3,6 +3,7 @@ import StarIcon from '@material-ui/icons/Star';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import './index.scss';
 import { Link } from 'react-router-dom';
+import _ from 'lodash';
 
 function Item({ image, title, price, rating }) {
   const handleItem = () => {
@@ -34,6 +35,12 @@ function Item({ image, title, price, rating }) {
     }
   };
 
+  const formatPrice = price =>
+    _.chunk(`${price}`.split('').reverse(), 3)
+      .map(e => e.reverse().join(''))
+      .reverse()
+      .join(',');
+
   return (
     <div className="store__item">
       <Link to={`/product/${title}/`}>
@@ -48,7 +55,7 @@ function Item({ image, title, price, rating }) {
           <StarIcon key={i} />
         ))}
       </div>
-      <div className="item__price">₩{price}</div>
+      <div className="item__price">₩{formatPrice(price)}</div>
       <div className="item__button">
         <button type="button" onClick={handleItem}>
           장바구니
