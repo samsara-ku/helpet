@@ -95,15 +95,6 @@ function Category() {
     <div className="store__category">
       <div className="store__category__header">
         <div className="store__category__col">{mockData.flat().length}개의 검색 결과</div>
-        <div className="store__category__col">
-          <select name="sort">
-            <option value="noraml" selected="selected">
-              기본순
-            </option>
-            <option value="price">가격순</option>
-            <option value="rating">평점순</option>
-          </select>
-        </div>
       </div>
       <div className="store__category__content">
         {mockData.map(array =>
