@@ -7,15 +7,31 @@ import { Link } from 'react-router-dom';
 function Item({ image, title, price, rating }) {
   const handleItem = () => {
     const { localStorage } = window;
-    const amount = parseInt(localStorage.getItem(title));
 
-    if (amount) {
-      localStorage.setItem(title, amount + 1);
+    const isExisted = localStorage.getItem(title);
+    const { amount } = JSON.parse(isExisted) ?? 0;
+
+    if (isExisted) {
+      localStorage.setItem(
+        title,
+        JSON.stringify({
+          title,
+          image,
+          price,
+          amount: amount + 1,
+        })
+      );
     } else {
-      localStorage.setItem(title, 1);
+      localStorage.setItem(
+        title,
+        JSON.stringify({
+          title,
+          image,
+          price,
+          amount: 1,
+        })
+      );
     }
-
-    console.log(amount);
   };
 
   return (
