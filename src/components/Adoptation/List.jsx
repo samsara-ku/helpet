@@ -12,7 +12,7 @@ function List({ category = 'information' }) {
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {
-    const endpoint = 'http://localhost:5000/graphql';
+    const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     // const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     const query = `
     {
