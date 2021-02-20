@@ -150,14 +150,14 @@ function Home() {
       >
         <div className={`home__route-container-item${slideState === 0 ? ' active' : ''}`}>
           <img src="http://www.saac.kr/images/kor09r-17-0380/main/main_visual01.jpg" alt="" />
-          <Link to="/information">
+          <Link to="/information/list">
             <h3>입양 정보 바로가기</h3>
           </Link>
         </div>
 
         <div className={`home__route-container-item${slideState === 1 ? ' active' : ''}`}>
           <img src="http://www.saac.kr/images/kor09r-17-0380/main/main_visual02.jpg" alt="" />
-          <Link to="/review">
+          <Link to="/review/list">
             <h3>입양 후기 바로가기</h3>
           </Link>
         </div>

@@ -4,6 +4,7 @@ import Home from './Home';
 import InfoList from './InfoList';
 import ReviewList from './ReviewList';
 import './Index.scss';
+import ArticleDetail from './ArticleDetail';
 
 function Index() {
   return (
@@ -12,6 +13,14 @@ function Index() {
         <Switch>
           <Route exact path="/">
             <Home />
+          </Route>
+
+          <Route path="/information/article/:aidx">
+            <ArticleDetail />
+          </Route>
+
+          <Route path="/review/article/:aidx">
+            <ReviewList />
           </Route>
 
           <Route path="/information/list">

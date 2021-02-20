@@ -1,11 +1,9 @@
 import React from 'react';
+import List from './List';
+import AdoptationLayout from './AdoptationLayout';
 
 function InfoList() {
-  return (
-    <div>
-      <span>info list</span>
-    </div>
-  );
+  return <AdoptationLayout content={<List />} />;
 }
 
 export default InfoList;
