@@ -1,9 +1,9 @@
 @import "./variables";
 
 .hidden-menu {
+  margin: 0 150px;
   position: absolute;
   display: none;
-  width: 100%;
   left: 0;
   bottom: -412px;
   background-color: white;
