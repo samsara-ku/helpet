@@ -29,7 +29,7 @@ function ArticleDetail({
     const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     const query = `
       {
-        articles {
+        articlesv2(page: ${Math.round(Math.random() * 2 + 1)}, size: 6 ) {
             aidx,
             title,
             summary,
@@ -47,7 +47,7 @@ function ArticleDetail({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
       }).then(res => res.json())
-    ).data.articles;
+    ).data.articlesv2;
 
     setArticlePreviewList(result);
 
