@@ -4,11 +4,13 @@ import Home from './Home';
 import InfoList from './InfoList';
 import ReviewList from './ReviewList';
 import './Index.scss';
+import ScrollToTop from '../Common/ScrollToTop';
 
 function Index() {
   return (
     <div className="adopt">
       <Router basename="/adopt">
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Home />

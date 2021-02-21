@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './index.scss';
 import { Link } from 'react-router-dom';
 import Item from '../Item';
@@ -31,14 +31,6 @@ function Home() {
       rating: 2,
     },
   ];
-
-  useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-  }, []);
 
   return (
     <div className="store__home">

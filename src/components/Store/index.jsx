@@ -6,11 +6,13 @@ import Category from './Category';
 import Product from './Product';
 import Mypage from './Mypage';
 import Payment from './Payment';
+import ScrollToTop from '../Common/ScrollToTop';
 
 function index() {
   return (
     <div className="store">
       <Router basename="/store">
+        <ScrollToTop />
         <Header />
         <Switch>
           <Route exact path="/">

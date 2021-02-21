@@ -20,12 +20,6 @@ function ArticleDetail({
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    });
-
     const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     const query = `
       {

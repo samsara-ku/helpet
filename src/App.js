@@ -9,11 +9,13 @@ import Articles from './components/Information/Articles';
 import Main from './components/Landing/Main';
 import AdoptationIndex from './components/Adoptation/Index';
 import StoreIndex from './components/Store/index';
+import ScrollToTop from './components/Common/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className="app">
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Main />
