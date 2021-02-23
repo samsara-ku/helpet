@@ -1,13 +1,15 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 // Above things are disable something about Web accessibility
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Menu.scss';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HiddenMenu from './HiddenMenu';
 import SignIn from './SignIn';
+import { useAuth } from '../../hooks/useMyState';
+import { AuthActions } from '../../hooks/useMyActions';
 
 function Menu({ articles }) {
   const history = useHistory();
@@ -22,6 +24,13 @@ function Menu({ articles }) {
 
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState([false, false]);
+
+  const auth = useAuth();
+  const { signout } = AuthActions();
+
+  useEffect(() => {
+    console.log(`auth Change`, auth);
+  }, [auth]);
 
   return (
     <div className="menu">
@@ -54,9 +63,16 @@ function Menu({ articles }) {
             <ArrowDropDownIcon />
             <HiddenMenu category={makeCategory('고양이')} articles={articles} visible={hover[1]} />
           </div>
-          <div className="menu__col__choice" onClick={() => setOpen(true)}>
-            로그인
-          </div>
+
+          {auth.uidx ? (
+            <div className="menu__col__choice" onClick={() => signout()}>
+              로그아웃
+            </div>
+          ) : (
+            <div className="menu__col__choice" onClick={() => setOpen(true)}>
+              로그인
+            </div>
+          )}
           <div className="menu__col__choice" onClick={() => history.push('/qna/')}>
             Q&A
           </div>

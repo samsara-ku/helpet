@@ -1,10 +1,10 @@
 import { useSelector } from 'react-redux';
 
-function useCounter() {
-  const state = useSelector(state => state.counter);
+function useAuth() {
+  const state = useSelector(state => state.auth);
 
   return state;
 }
 
-export default useCounter;
-export { useCounter };
+export default useAuth;
+export { useAuth };
