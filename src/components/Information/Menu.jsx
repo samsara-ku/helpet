@@ -65,7 +65,19 @@ function Menu({ articles }) {
           </div>
 
           {auth.uidx ? (
-            <div className="menu__col__choice" onClick={() => signout()}>
+            <div
+              className="menu__col__choice"
+              onClick={() => {
+                fetch(`http://localhost:5005/signout`, {
+                  method: 'POST',
+                  headers: { 'Content-Type': 'application/json' },
+                })
+                  .then(res => res.json())
+                  .then(console.log);
+
+                signout();
+              }}
+            >
               로그아웃
             </div>
           ) : (
