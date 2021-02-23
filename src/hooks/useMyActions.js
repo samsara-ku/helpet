@@ -1,21 +1,24 @@
 import { useDispatch } from 'react-redux';
 import { useCallback } from 'react';
-import { increment, decrement } from '../modules/counter';
+import { login, logout } from '../modules/auth';
 
-const CounterActions = () => {
+const AuthActions = () => {
   const dispatch = useDispatch();
 
-  const increase = useCallback(() => {
-    dispatch(increment());
+  const signin = useCallback(
+    uidx => {
+      dispatch(login(uidx));
+    },
+    [dispatch]
+  );
+
+  const signout = useCallback(() => {
+    dispatch(logout());
   }, [dispatch]);
 
-  const decrease = useCallback(() => {
-    dispatch(decrement());
-  }, [dispatch]);
-
-  return { increase, decrease };
+  return { signin, signout };
 };
 
-export default CounterActions;
+export default AuthActions;
 
-export { CounterActions };
+export { AuthActions };

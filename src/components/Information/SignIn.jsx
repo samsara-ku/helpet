@@ -4,6 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CancelIcon from '@material-ui/icons/Cancel';
 import Modal from '../Global/Modal/Modal';
+import { AuthActions } from '../../hooks/useMyActions';
 
 function SignIn({ isOpen, close }) {
   const [formState, setFormState] = useState({
@@ -11,6 +12,8 @@ function SignIn({ isOpen, close }) {
     password: '',
   });
   const [resultMsgState, setResultMsgState] = useState(' ');
+
+  const { signin } = AuthActions();
 
   const onSigninHandler = async () => {
     console.log(formState);
@@ -22,7 +25,8 @@ function SignIn({ isOpen, close }) {
       return;
     }
 
-    const result = await fetch(`https://helpet-backend.herokuapp.com/signin`, {
+    // const result = await fetch(`https://helpet-backend.herokuapp.com/signin`, {
+    const result = await fetch(`http://localhost:5005/signin`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formState),
@@ -31,6 +35,7 @@ function SignIn({ isOpen, close }) {
     console.log(result);
 
     if (result.msg === 'good') {
+      signin(result.uidx);
       close();
     } else {
       setResultMsgState('로그인 실패');
