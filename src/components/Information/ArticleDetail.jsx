@@ -55,13 +55,12 @@ function ArticleDetail({
 
     if ('IntersectionObserver' in window) {
       const imgObserver = new IntersectionObserver(
-        (entries, observer) => {
+        entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const img = entry.target;
               img.src = img.dataset.lazySrc ?? img.src;
               imgObserver.unobserve(img);
-              console.log(img);
             }
           });
         },

@@ -2,6 +2,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 // Above things are disable something about Web accessibility
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Menu.scss';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
@@ -9,6 +10,8 @@ import HiddenMenu from './HiddenMenu';
 import SignIn from './SignIn';
 
 function Menu({ articles }) {
+  const history = useHistory();
+
   const makeCategory = prefix => [
     `${prefix} 건강`,
     `${prefix} 행동`,
@@ -54,7 +57,9 @@ function Menu({ articles }) {
           <div className="menu__col__choice" onClick={() => setOpen(true)}>
             로그인
           </div>
-          <div className="menu__col__choice">Q&A</div>
+          <div className="menu__col__choice" onClick={() => history.push('/qna/')}>
+            Q&A
+          </div>
         </div>
       </div>
 
