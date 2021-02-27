@@ -68,7 +68,7 @@ function Payment() {
             </div>
           </div>
           <div className="store__payment-side-price">
-            합계 금액: {_.sumBy(cartItems, ({ price, amount }) => price * amount)}
+            합계 금액: {formatPrice(_.sumBy(cartItems, ({ price, amount }) => price * amount))}
           </div>
           <button type="button">결제하기</button>
         </div>

@@ -10,29 +10,17 @@ function Item({ image, title, price, rating }) {
     const { localStorage } = window;
 
     const isExisted = localStorage.getItem(title);
-    const { amount } = JSON.parse(isExisted) ?? 0;
+    const amount = JSON.parse(isExisted)?.amount ?? 0;
 
-    if (isExisted) {
-      localStorage.setItem(
+    localStorage.setItem(
+      title,
+      JSON.stringify({
         title,
-        JSON.stringify({
-          title,
-          image,
-          price,
-          amount: amount + 1,
-        })
-      );
-    } else {
-      localStorage.setItem(
-        title,
-        JSON.stringify({
-          title,
-          image,
-          price,
-          amount: 1,
-        })
-      );
-    }
+        image,
+        price,
+        amount: amount + 1,
+      })
+    );
   };
 
   const formatPrice = price =>
@@ -48,11 +36,11 @@ function Item({ image, title, price, rating }) {
         <div className="item__title">{title}</div>
       </Link>
       <div className="item__rating">
-        {new Array(5 - rating).fill(0).map((e, i) => (
-          <StarBorderIcon key={i} />
-        ))}
         {new Array(rating).fill(0).map((e, i) => (
           <StarIcon key={i} />
+        ))}
+        {new Array(5 - rating).fill(0).map((e, i) => (
+          <StarBorderIcon key={i} />
         ))}
       </div>
       <div className="item__price">₩{formatPrice(price)}</div>
