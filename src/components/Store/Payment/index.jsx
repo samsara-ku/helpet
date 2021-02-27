@@ -1,17 +1,13 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from 'react';
 import _ from 'lodash';
 import './index.scss';
+import useFormatPrice from '../../../hooks/useFormatPrice';
 
 function Payment() {
   const cartItems = _.map(localStorage, (e, i) =>
     JSON.parse(localStorage.getItem(localStorage.key(i)))
   );
-
-  const formatPrice = price =>
-    _.chunk(`${price}`.split('').reverse(), 3)
-      .map(e => e.reverse().join(''))
-      .reverse()
-      .join(',');
 
   return (
     <div className="store__payment">
@@ -29,7 +25,7 @@ function Payment() {
                 <div className="detail">
                   <div className="title">상품명: {title}</div>
                   <div className="amount">수량: {amount}개</div>
-                  <div className="price">총 금액: ₩{formatPrice(price * amount)}</div>
+                  <div className="price">총 금액: ₩{useFormatPrice(price * amount)}</div>
                 </div>
               </div>
             ))}
@@ -68,7 +64,7 @@ function Payment() {
             </div>
           </div>
           <div className="store__payment-side-price">
-            합계 금액: {formatPrice(_.sumBy(cartItems, ({ price, amount }) => price * amount))}
+            합계 금액: {useFormatPrice(_.sumBy(cartItems, ({ price, amount }) => price * amount))}
           </div>
           <button type="button">결제하기</button>
         </div>

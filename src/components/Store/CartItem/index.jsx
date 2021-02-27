@@ -1,15 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './index.scss';
-import _ from 'lodash';
+import useFormatPrice from '../../../hooks/useFormatPrice';
 
 function CartItem({ title, image, price }) {
   const [quantity, setQuantity] = useState(JSON.parse(localStorage.getItem(title)).amount);
-
-  const formatPrice = price =>
-    _.chunk(`${price}`.split('').reverse(), 3)
-      .map(e => e.reverse().join(''))
-      .reverse()
-      .join(',');
 
   const handleAmount = v => {
     const { amount } = JSON.parse(localStorage.getItem(title));
@@ -46,7 +40,7 @@ function CartItem({ title, image, price }) {
             +
           </button>
         </div>
-        <div className="store__cartitem-price">₩{formatPrice(price * quantity)}</div>
+        <div className="store__cartitem-price">₩{useFormatPrice(price * quantity)}</div>
       </div>
     </div>
   );
