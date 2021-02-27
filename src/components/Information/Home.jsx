@@ -12,7 +12,7 @@ function Home() {
     const endpoint = `${heroku}/graphql`;
     const query = `
       {
-        articles {
+        articlesv2(category_code: "10|20") {
             aidx,
             title,
             summary,
@@ -30,7 +30,7 @@ function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
       }).then(res => res.json())
-    ).data.articles;
+    ).data.articlesv2;
 
     setArticlePreviewList(result);
   }, []);
