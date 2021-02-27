@@ -1,0 +1,32 @@
+@import "../../variables";
+
+.information__qna__item {
+  padding: 10px 0;
+  border-top: 1px solid lightgray;
+
+  &-col {
+    .title {
+      margin-bottom: 5px;
+      color: $mainColor;
+      font-weight: 600;
+      font-size: 20px;
+    }
+
+    .content {
+      width: 30%;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &:first-child {
+      cursor: pointer;
+    }
+
+    &:last-child {
+      font-size: 13px;
+      line-height: 18px;
+      text-align: right;
+    }
+  }
+}
