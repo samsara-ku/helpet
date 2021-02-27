@@ -1,20 +1,20 @@
 @import "./variables";
 
 .hidden-menu {
-  margin: 0 150px;
+  padding: 0 150px;
   position: absolute;
   display: none;
   left: 0;
   bottom: -412px;
   background-color: white;
-  border-top: 1.5px solid $mainColor;
-  box-shadow: 0 1px 2px rgba(107, 107, 107, 0.5);
   z-index: 11;
+  width: 100%;
   cursor: default;
 
   &__row {
     display: flex;
-    width: 100%;
+    border-top: 1.5px solid $mainColor;
+    box-shadow: 0 1px 2px rgba(107, 107, 107, 0.5);
   }
 
   &-category {
