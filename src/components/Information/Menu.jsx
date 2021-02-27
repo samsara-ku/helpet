@@ -10,6 +10,7 @@ import HiddenMenu from './HiddenMenu';
 import SignIn from './SignIn';
 import { useAuth } from '../../hooks/useMyState';
 import { AuthActions } from '../../hooks/useMyActions';
+import { heroku } from '../../env/apiurl.json';
 
 function Menu({ articles }) {
   const history = useHistory();
@@ -68,7 +69,7 @@ function Menu({ articles }) {
             <div
               className="menu__col__choice"
               onClick={() => {
-                fetch(`http://localhost:5005/signout`, {
+                fetch(`${heroku}/signout`, {
                   method: 'POST',
                   headers: { 'Content-Type': 'application/json' },
                 })

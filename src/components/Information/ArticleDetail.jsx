@@ -6,6 +6,7 @@ import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ShareBtn from './ShareBtn';
 import Tags from './Tags';
 import RelatedArticle from './RelatedArticle';
+import { heroku } from '../../env/apiurl.json';
 
 function ArticleDetail({
   title,
@@ -20,7 +21,13 @@ function ArticleDetail({
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {
-    const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+
+    const endpoint = `${heroku}/graphql`;
     const query = `
       {
         articlesv2(page: ${Math.round(Math.random() * 2 + 1)}, size: 6 ) {

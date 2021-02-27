@@ -5,6 +5,7 @@ import TwitterIcon from '@material-ui/icons/Twitter';
 import CancelIcon from '@material-ui/icons/Cancel';
 import Modal from '../Global/Modal/Modal';
 import { AuthActions } from '../../hooks/useMyActions';
+import { heroku } from '../../env/apiurl.json';
 
 function SignIn({ isOpen, close }) {
   const [formState, setFormState] = useState({
@@ -25,8 +26,7 @@ function SignIn({ isOpen, close }) {
       return;
     }
 
-    // const result = await fetch(`https://helpet-backend.herokuapp.com/signin`, {
-    const result = await fetch(`http://localhost:5005/signin`, {
+    const result = await fetch(`${heroku}/signin`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formState),
