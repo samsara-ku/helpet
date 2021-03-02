@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable import/no-extraneous-dependencies */
 import './Header.scss';
 import _ from 'lodash';
@@ -45,18 +46,18 @@ function Header() {
           </Link>
         </div>
         <div className="header__col">
-          <Link to="/">
+          <a href="https://www.facebook.com" target="_blank">
             <FacebookIcon className="header__item" />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href="https://www.youtube.com" target="_blank">
             <YouTubeIcon className="header__item" />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href="https://www.instagram.com" target="_blank">
             <InstagramIcon className="header__item" />
-          </Link>
-          <Link to="/">
+          </a>
+          <a href="https://www.twitter.com" target="_blank">
             <TwitterIcon className="header__item" />
-          </Link>
+          </a>
         </div>
       </div>
     </div>

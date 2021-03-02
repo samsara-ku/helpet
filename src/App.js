@@ -5,7 +5,6 @@ import Notfound from './components/Information/Notfound';
 import HomeContainer from './containers/HomeContainer';
 import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
-import Articles from './components/Information/Articles';
 import Main from './components/Landing/Main';
 import AdoptationIndex from './components/Adoptation/Index';
 import StoreIndex from './components/Store/index';
@@ -30,7 +29,8 @@ function App() {
 
           <Route exact path="/home/articles">
             <Header />
-            <Articles />
+            <AdoptationIndex />
+            <Footer />
           </Route>
 
           <Route exact path="/home/articles/article/:aidx">
