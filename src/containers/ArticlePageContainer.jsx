@@ -3,6 +3,7 @@ import { useRouteMatch } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ArticleDetail from '../components/Information/ArticleDetail';
 import Layout1 from '../components/Information/Layout1';
+import { heroku } from '../env/apiurl.json';
 
 const ArticlePageContainer = () => {
   const match = useRouteMatch();
@@ -14,7 +15,7 @@ const ArticlePageContainer = () => {
   useEffect(async () => {
     setIsLoaded(false);
 
-    const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
+    const endpoint = `${heroku}/graphql`;
     const query = `
     {
       article(aidx: ${aidx}) {

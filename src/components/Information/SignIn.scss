@@ -5,17 +5,17 @@
   display: flex;
 
   &-col {
-    padding: 30px;
     min-width: 360px;
     min-height: 460px;
+    padding: 30px;
   }
 
   &__login {
     display: flex;
     flex-direction: column;
+    gap: 15px;
     justify-content: center;
     height: 100%;
-    gap: 15px;
 
     div {
       display: flex;
@@ -25,8 +25,8 @@
     input {
       width: 100%;
       padding: 12px 15px;
-      border: none;
       background-color: #eee;
+      border: none;
     }
 
     &-close {
@@ -37,19 +37,19 @@
     }
 
     &-title {
-      font-size: 30px;
       font-weight: 800;
+      font-size: 30px;
     }
 
     &-register {
       display: flex;
-      margin: 20px 0 25px 0;
       gap: 15px;
+      margin: 20px 0 25px 0;
 
       svg {
         font-size: 30px;
-        transition: 0.25s ease;
         cursor: pointer;
+        transition: 0.25s ease;
 
         &:first-child {
           &:hover {
@@ -66,24 +66,29 @@
     }
 
     &-forgot {
-      font-size: 14px;
       margin: 10px 0;
+      font-size: 14px;
 
       u {
         cursor: pointer;
       }
     }
 
+    &-msg {
+      color: red;
+      font-size: small;
+    }
+
     &-button {
       button {
-        font-size: 12px;
-        border-radius: 20px;
-        font-weight: 800;
-        border: none;
-        color: #ffffff;
-        background-color: #ff4b2b;
         padding: 12px 45px;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 12px;
         letter-spacing: 1px;
+        background-color: #ff4b2b;
+        border: none;
+        border-radius: 20px;
         transition: transform 80ms ease-in;
       }
     }

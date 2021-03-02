@@ -2,12 +2,13 @@ import './Articles.scss';
 import React, { useState, useEffect } from 'react';
 import Article from './Article';
 import Pagination from './Pagination';
+import { heroku } from '../../env/apiurl.json';
 
 function Articles() {
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {
-    const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
+    const endpoint = `${heroku}/graphql`;
     const query = `
     {
       articles {

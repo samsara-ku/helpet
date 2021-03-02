@@ -1,11 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './SignIn.scss';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CancelIcon from '@material-ui/icons/Cancel';
 import Modal from '../Global/Modal/Modal';
+import { AuthActions } from '../../hooks/useMyActions';
+import { heroku } from '../../env/apiurl.json';
 
 function SignIn({ isOpen, close }) {
+  const [formState, setFormState] = useState({
+    email: '',
+    password: '',
+  });
+  const [resultMsgState, setResultMsgState] = useState(' ');
+
+  const { signin } = AuthActions();
+
+  const onSigninHandler = async () => {
+    console.log(formState);
+
+    // 폼 값 유효성 체크
+    const { email, password } = formState;
+    if (!(email.length > 1 && password.length > 1)) {
+      setResultMsgState(`입력폼을 채워주세요`);
+      return;
+    }
+
+    const result = await fetch(`${heroku}/signin`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formState),
+    }).then(res => res.json());
+
+    console.log(result);
+
+    if (result.msg === 'good') {
+      signin(result.uidx);
+      close();
+    } else {
+      setResultMsgState('로그인 실패');
+    }
+  };
+
+  const onChangeHandler = (name, value) => {
+    setFormState({ ...formState, [name]: value });
+  };
+
   return (
     <Modal isOpen={isOpen} onClose={() => close()}>
       <div className="sign-in">
@@ -20,16 +60,37 @@ function SignIn({ isOpen, close }) {
               <TwitterIcon />
             </div>
             <div className="sign-in__login-email">
-              <input type="text" placeholder="Email" />
+              <input
+                type="text"
+                placeholder="Email"
+                name="email"
+                value={formState.email}
+                onChange={e => {
+                  const { name, value } = e.target;
+                  onChangeHandler(name, value);
+                }}
+              />
             </div>
             <div className="sign-in__login-password">
-              <input type="text" placeholder="Password" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={formState.password}
+                onChange={e => {
+                  const { name, value } = e.target;
+                  onChangeHandler(name, value);
+                }}
+              />
             </div>
+            <div className="sign-in__login-msg">{resultMsgState}</div>
             <div className="sign-in__login-forgot">
               <u>비밀번호</u>를 잊으셨나요?
             </div>
             <div className="sign-in__login-button">
-              <button type="button">로그인</button>
+              <button type="button" onClick={onSigninHandler}>
+                로그인
+              </button>
             </div>
           </div>
         </div>

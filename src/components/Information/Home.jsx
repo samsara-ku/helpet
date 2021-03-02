@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 import GradeIcon from '@material-ui/icons/Grade';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import { heroku } from '../../env/apiurl.json';
 
 function Home() {
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {
-    const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
+    const endpoint = `${heroku}/graphql`;
     const query = `
       {
-        articles {
+        articlesv2(category_code: "10|20") {
             aidx,
             title,
             summary,
@@ -29,7 +30,7 @@ function Home() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
       }).then(res => res.json())
-    ).data.articles;
+    ).data.articlesv2;
 
     setArticlePreviewList(result);
   }, []);
