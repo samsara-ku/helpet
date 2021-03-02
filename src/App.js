@@ -2,11 +2,10 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './components/Global/Header/Header';
 import Notfound from './components/Information/Notfound';
-import HomeContainer from './containers/HomeContainer';
 import Footer from './components/Global/Footer/Footer';
-import ArticlePageContainer from './containers/ArticlePageContainer';
 import Main from './components/Landing/Main';
 import AdoptationIndex from './components/Adoptation/Index';
+import InformationIndex from './components/Information/index';
 import StoreIndex from './components/Store/index';
 import ScrollToTop from './components/Common/ScrollToTop';
 
@@ -21,21 +20,10 @@ function App() {
             <Footer />
           </Route>
 
-          <Route exact path="/home">
+          <Route path="/home">
             <Header />
-            <HomeContainer />
+            <InformationIndex />
             <Footer />
-          </Route>
-
-          <Route exact path="/home/articles">
-            <Header />
-            <AdoptationIndex />
-            <Footer />
-          </Route>
-
-          <Route exact path="/home/articles/article/:aidx">
-            <Header />
-            <ArticlePageContainer />
           </Route>
 
           <Route path="/adopt">

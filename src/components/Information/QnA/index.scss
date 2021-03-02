@@ -1,0 +1,65 @@
+.information__qna {
+  padding: 20px 150px 100px 150px;
+
+  &-form {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    text-align: center;
+
+    &-isLogin {
+      width: 40%;
+      padding: 45px 15px;
+      text-align: start;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+
+      span {
+        margin-right: 10px;
+      }
+
+      input,
+      textarea {
+        width: 80%;
+        padding: 4px 8px;
+        border-radius: 2px;
+        resize: none;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+
+    &-notLogin {
+      padding: 45px 15px;
+      border: 1px solid lightgray;
+      border-radius: 5px;
+
+      button {
+        margin-top: 15px;
+      }
+    }
+
+    &-row {
+      display: flex;
+      margin-bottom: 10px;
+
+      &:last-child {
+        justify-content: center;
+        margin-bottom: 0px;
+      }
+    }
+
+    button {
+      padding: 4px 8px;
+      border: 1px solid lightgray;
+    }
+  }
+
+  &-content {
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+}

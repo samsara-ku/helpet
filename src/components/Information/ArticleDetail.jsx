@@ -23,7 +23,7 @@ function ArticleDetail({
     const endpoint = 'https://helpet-backend.herokuapp.com/graphql';
     const query = `
       {
-        articles {
+        articlesv2(page: ${Math.round(Math.random() * 2 + 1)}, size: 6 ) {
             aidx,
             title,
             summary,
@@ -41,7 +41,7 @@ function ArticleDetail({
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
       }).then(res => res.json())
-    ).data.articles;
+    ).data.articlesv2;
 
     setArticlePreviewList(result);
 
@@ -49,13 +49,12 @@ function ArticleDetail({
 
     if ('IntersectionObserver' in window) {
       const imgObserver = new IntersectionObserver(
-        (entries, observer) => {
+        entries => {
           entries.forEach(entry => {
             if (entry.isIntersecting) {
               const img = entry.target;
               img.src = img.dataset.lazySrc ?? img.src;
               imgObserver.unobserve(img);
-              console.log(img);
             }
           });
         },

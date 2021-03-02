@@ -9,7 +9,7 @@ function HiddenMenu({ category, articles, visible }) {
         <ul className="hidden-menu-category">
           {category.map((e, i) => (
             <li className="hidden-menu-category__choice" key={i}>
-              <Link to="./home/articles">{e}</Link>
+              <Link to="/articles/">{e}</Link>
             </li>
           ))}
         </ul>
@@ -17,7 +17,7 @@ function HiddenMenu({ category, articles, visible }) {
           {articles
             ?.filter((post, pIdx) => pIdx < 3)
             .map((e, i) => (
-              <Link to={`./home/articles/article/${e.aidx}`}>
+              <Link to={`/articles/article/${e.aidx}`}>
                 <div key={i} className="hidden-menu-article__post">
                   <div className="hidden-menu-article__post-col">
                     <img src={e.thumbnail} alt="" />

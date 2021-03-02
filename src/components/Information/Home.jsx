@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import GradeIcon from '@material-ui/icons/Grade';
 import { Link } from 'react-router-dom';
 import Search from './Search';
-import Menu from './Menu';
 
 function Home() {
   const [articlePreviewList, setArticlePreviewList] = useState([]);
@@ -37,7 +36,6 @@ function Home() {
 
   return (
     <div className="home">
-      <Menu articles={articlePreviewList} />
       <div className="home__header">
         <div className="home__header__logo">
           <GradeIcon />
@@ -52,7 +50,7 @@ function Home() {
           {articlePreviewList
             .filter((e, i) => i < 3)
             .map((elem, eidx) => (
-              <Link to={`./home/articles/article/${elem.aidx}`} key={eidx}>
+              <Link to={`/articles/article/${elem.aidx}/`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
                     <img src={elem.thumbnail} alt="" />
@@ -72,7 +70,7 @@ function Home() {
           {articlePreviewList
             .filter((e, i) => i < 4)
             .map((elem, eidx) => (
-              <Link to={`./home/articles/article/${elem.aidx}`} key={eidx}>
+              <Link to={`/articles/article/${elem.aidx}/`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
                     <img src={elem.thumbnail} alt="" />
@@ -91,7 +89,7 @@ function Home() {
           {articlePreviewList
             .filter((e, i) => i >= 5)
             .map((elem, eidx) => (
-              <Link to={`./home/articles/article/${elem.aidx}`} key={eidx}>
+              <Link to={`/articles/article/${elem.aidx}/`} key={eidx}>
                 <div className="home__content__post">
                   <div className="home__content__post-col">
                     <img src={elem.thumbnail} alt="" />
