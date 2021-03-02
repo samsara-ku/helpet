@@ -1,0 +1,84 @@
+@import "../variables";
+
+.store__home {
+  &__row {
+    margin-bottom: 150px;
+
+    .divider-wrapper {
+      margin-bottom: 50px;
+
+      .divider {
+        display: block;
+        width: 10%;
+        margin: 0 auto;
+        border-top: 4px solid $mainColor;
+      }
+    }
+
+    .title {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 28px;
+      line-height: 28px;
+      text-align: center;
+    }
+
+    .content-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      button {
+        padding: 12px 24px;
+        font-weight: 500;
+        font-size: 15px;
+        background-color: $mainColor;
+        border-radius: 20px;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 75px;
+
+      .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        .content {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          align-items: center;
+          padding: 15px;
+          border: 1px solid rgb(238, 238, 238);
+
+          img {
+            width: 300px;
+            height: 300px;
+          }
+
+          span {
+            display: block;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 32px;
+          }
+
+          button {
+            padding: 15px 30px;
+            font-weight: 500;
+            background-color: $mainColor;
+            border-radius: 25px;
+          }
+        }
+      }
+    }
+  }
+}

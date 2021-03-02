@@ -1,0 +1,78 @@
+@import "../variables";
+
+.store__payment {
+  padding: 0 200px;
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+
+  &-total {
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  &-item {
+    display: flex;
+    padding: 20px;
+    border: 1px solid lightgray;
+
+    .detail {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 0 0 15px 15px;
+    }
+
+    .title {
+      font-size: 18px;
+    }
+
+    img {
+      width: 100px;
+    }
+  }
+
+  &-side {
+    padding: 20px 40px;
+    border: 1px solid lightgray;
+
+    &-title {
+      margin-bottom: 20px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+
+    &-price {
+      margin-bottom: 8px;
+    }
+
+    input {
+      padding: 4px 8px;
+    }
+
+    .box {
+      margin: 8px 0;
+    }
+
+    .name,
+    .address,
+    .email,
+    .phone,
+    .memo {
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-weight: 500;
+      font-size: 14px;
+      background-color: $mainColor;
+      border-radius: 20px;
+    }
+  }
+}

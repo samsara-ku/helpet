@@ -7,11 +7,14 @@ import Footer from './components/Global/Footer/Footer';
 import ArticlePageContainer from './containers/ArticlePageContainer';
 import Main from './components/Landing/Main';
 import AdoptationIndex from './components/Adoptation/Index';
+import StoreIndex from './components/Store/index';
+import ScrollToTop from './components/Common/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className="app">
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Main />
@@ -38,6 +41,12 @@ function App() {
           <Route path="/adopt">
             <Header />
             <AdoptationIndex />
+            <Footer />
+          </Route>
+
+          <Route path="/store">
+            <Header />
+            <StoreIndex />
             <Footer />
           </Route>
 
