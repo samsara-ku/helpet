@@ -1,26 +1,26 @@
-@import "./variables";
+@import "../Common/variables";
 
 .search-form {
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   background-color: white;
-  justify-content: space-between;
 
   input {
-    border: none;
     flex: 1;
     height: 45px;
     padding: 10px;
     padding-left: 31px;
-    background-color: transparent;
     overflow: hidden;
+    background-color: transparent;
+    border: none;
   }
 
   button {
-    background-color: $mainColor;
     padding: 5px;
+    background-color: $mainColor;
   }
 
   button svg {

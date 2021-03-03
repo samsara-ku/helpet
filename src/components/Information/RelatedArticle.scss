@@ -1,4 +1,4 @@
-@import "./variables";
+@import "../Common/variables";
 
 .related-article {
   padding: 10px;
@@ -9,45 +9,45 @@
 
   > div {
     display: flex;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
     justify-content: center;
 
     > a > div {
       display: flex;
       flex-direction: column;
-      margin-bottom: 20px;
       width: 320px;
+      margin-bottom: 20px;
 
       .img-wrapper {
         overflow: hidden;
         border-radius: 2px;
 
         > img {
-          background-color: gray;
           max-width: 100%;
           height: auto;
+          background-color: gray;
         }
       }
 
       .title {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
         margin: 3px 0;
+        overflow: hidden;
         font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       .time {
-        margin: 3px 0;
         display: flex;
         align-items: center;
-        font-size: small;
+        margin: 3px 0;
         color: $grayColor;
+        font-size: small;
 
         > svg {
-          font-size: inherit;
           margin: 0 5px;
+          font-size: inherit;
         }
       }
     }
