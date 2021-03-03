@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import './SignIn.scss';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import CancelIcon from '@material-ui/icons/Cancel';
-import Modal from '../Global/Modal/Modal';
-import { AuthActions } from '../../hooks/useMyActions';
-import { heroku } from '../../env/apiurl.json';
+import Modal from '../../Global/Modal/Modal';
+import { AuthActions } from '../../../hooks/useMyActions';
+import { heroku } from '../../../env/apiurl.json';
+import './index.scss';
 
 function SignIn({ isOpen, close }) {
   const [formState, setFormState] = useState({
