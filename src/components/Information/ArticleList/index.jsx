@@ -1,17 +1,17 @@
-import './Articles.scss';
 import React, { useState, useEffect } from 'react';
-import Article from './Article';
-import Pagination from './Pagination';
-import { heroku } from '../../env/apiurl.json';
+import Article from '../Article';
+import Pagination from '../Pagination';
+import { heroku } from '../../../env/apiurl.json';
+import './index.scss';
 
-function Articles() {
+function ArticleList() {
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {
     const endpoint = `${heroku}/graphql`;
     const query = `
     {
-      articles {
+      articlesv2(category_code: "10") {
           aidx,
           title,
           summary,
@@ -29,19 +29,19 @@ function Articles() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query }),
       }).then(res => res.json())
-    ).data.articles;
+    ).data.articlesv2;
 
     setArticlePreviewList(result);
   }, []);
 
   return (
-    <div className="articles">
-      <div className="articles__meta">
+    <div className="information__articles">
+      <div className="information__articles__meta">
         <span>
           <strong>강아지</strong>에 대한 검색 결과
         </span>
       </div>
-      <div className="articles__content">
+      <div className="information__articles__content">
         {articlePreviewList.map((item, idx) => {
           const { aidx, title, summary, thumbnail, insert_date: insertDate } = item;
 
@@ -63,4 +63,4 @@ function Articles() {
   );
 }
 
-export default Articles;
+export default ArticleList;

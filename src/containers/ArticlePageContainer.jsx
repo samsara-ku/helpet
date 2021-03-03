@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import ArticleDetail from '../components/Information/ArticleDetail';
+import ArticleDetail from '../components/Information/Article/Detail';
 import Layout1 from '../components/Information/Layout1';
 import { heroku } from '../env/apiurl.json';
 

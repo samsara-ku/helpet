@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import AdoptationLayout from './AdoptationLayout';
-
-import ArticleDetail2 from '../Information/ArticleDetail';
+import ArticleDetail2 from '../Information/Article/Detail';
 
 function ArticleDetail() {
   const match = useRouteMatch();

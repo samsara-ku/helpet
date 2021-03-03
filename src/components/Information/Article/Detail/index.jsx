@@ -1,12 +1,12 @@
 /* eslint-disable react/no-danger */
-import './ArticleDetail.scss';
 import React, { useEffect, useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
-import ShareBtn from './ShareBtn';
-import Tags from './Tags';
-import RelatedArticle from './RelatedArticle';
-import { heroku } from '../../env/apiurl.json';
+import ShareBtn from '../../ShareBtn';
+import Tags from '../../Tags';
+import RelatedArticle from '../../RelatedArticle';
+import { heroku } from '../../../../env/apiurl.json';
+import './index.scss';
 
 function ArticleDetail({
   title,
