@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Home from './Home';
+import Home from './Home/index';
 import Articles from './ArticleList';
 import ArticlePageContainer from '../../containers/ArticlePageContainer';
 import QnA from './QnA';

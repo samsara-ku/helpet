@@ -1,11 +1,10 @@
-import './Search.scss';
 import React, { useEffect, useRef, useState } from 'react';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
 import SearchIcon from '@material-ui/icons/Search';
-
 import { Power3, TimelineLite } from 'gsap';
 import CSSPlugin from 'gsap/CSSPlugin';
-import SearchForm from './SearchForm';
+import SearchForm from './Form/index';
+import './index.scss';
 
 // eslint-disable-next-line no-unused-vars
 const C = CSSPlugin;
@@ -74,25 +73,25 @@ function Search() {
 
   return (
     <>
-      <div className="search__background" ref={backgroundRef} />
-      <div className="search">
-        <div className="search__theme">
+      <div className="information__search__background" ref={backgroundRef} />
+      <div className="information__search">
+        <div className="information__search__theme">
           <SearchForm
             onClick={onSearchHandler}
             onFocusInput={onFocusInput}
             onBlurInput={onBlurInput}
           />
 
-          <div className="search__history" ref={historyRef}>
-            <div className="search__history__words">
+          <div className="information__search__history" ref={historyRef}>
+            <div className="information__search__history__words">
               {[1123213, 111111, 3123121312].map(e => (
-                <div key={e} className="search__history__word">
+                <div key={e} className="information__search__history__word">
                   <QueryBuilderIcon />
                   <span>{e}</span>
                 </div>
               ))}
               {[1, 2, 3].map(e => (
-                <div key={e} className="search__history__word">
+                <div key={e} className="information__search__history__word">
                   <SearchIcon />
                   <span>{e}</span>
                 </div>
