@@ -1,16 +1,15 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-// Above things are disable something about Web accessibility
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './Menu.scss';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import HiddenMenu from './HiddenMenu';
-import SignIn from './SignIn';
-import { useAuth } from '../../hooks/useMyState';
-import { AuthActions } from '../../hooks/useMyActions';
-import { heroku } from '../../env/apiurl.json';
+import HiddenMenu from './Hidden';
+import SignIn from '../SignIn';
+import { useAuth } from '../../../hooks/useMyState';
+import { AuthActions } from '../../../hooks/useMyActions';
+import { heroku } from '../../../env/apiurl.json';
+import './index.scss';
 
 function Menu({ articles }) {
   const history = useHistory();
@@ -34,16 +33,16 @@ function Menu({ articles }) {
   }, [auth]);
 
   return (
-    <div className="menu">
-      <div className="menu__row">
-        <div className="menu__col">
-          <div className="menu__col__logo">
+    <div className="information__menu">
+      <div className="information__menu__row">
+        <div className="information__menu__col">
+          <div className="information__menu__col__logo">
             <CloudIcon />
           </div>
         </div>
-        <div className="menu__col">
+        <div className="information__menu__col">
           <div
-            className="menu__col__choice"
+            className="information__menu__col__choice"
             onMouseEnter={() => setHover([true, false])}
             onMouseLeave={() => {
               setHover([false, false]);
@@ -54,7 +53,7 @@ function Menu({ articles }) {
             <HiddenMenu category={makeCategory('강아지')} articles={articles} visible={hover[0]} />
           </div>
           <div
-            className="menu__col__choice"
+            className="information__menu__col__choice"
             onMouseEnter={() => setHover([false, true])}
             onMouseLeave={() => {
               setHover([false, false]);
@@ -67,7 +66,7 @@ function Menu({ articles }) {
 
           {auth.uidx ? (
             <div
-              className="menu__col__choice"
+              className="information__menu__col__choice"
               onClick={() => {
                 fetch(`${heroku}/signout`, {
                   method: 'POST',
@@ -82,11 +81,11 @@ function Menu({ articles }) {
               로그아웃
             </div>
           ) : (
-            <div className="menu__col__choice" onClick={() => setOpen(true)}>
+            <div className="information__menu__col__choice" onClick={() => setOpen(true)}>
               로그인
             </div>
           )}
-          <div className="menu__col__choice" onClick={() => history.push('/qna/')}>
+          <div className="information__menu__col__choice" onClick={() => history.push('/qna/')}>
             Q&A
           </div>
         </div>
