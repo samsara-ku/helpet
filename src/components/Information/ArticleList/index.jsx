@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import Article from '../Article';
-import Pagination from '../Pagination';
+import Paginator from '../../Global/Paginator';
 import { heroku } from '../../../env/apiurl.json';
 import ENV from '../../../env/var.json';
 import './index.scss';
@@ -60,7 +60,7 @@ function ArticleList() {
         })}
       </div>
 
-      <Pagination current="6" total="10" baseUrl="" />
+      <Paginator current="6" total="10" baseUrl="" />
     </div>
   );
 }

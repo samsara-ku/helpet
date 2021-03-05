@@ -1,7 +1,7 @@
 import './List.scss';
 import React, { useEffect, useState } from 'react';
 import ListItem from './ListItem';
-import Pagination from '../Information/Pagination';
+import Paginator from '../Global/Paginator';
 
 const categoryCodeMap = new Map([
   ['information', '300'],
@@ -72,7 +72,7 @@ function List({ category = 'information' }) {
       </div>
 
       <div className="pagination-container">
-        <Pagination current="6" total="10" baseUrl="" />
+        <Paginator current="6" total="10" baseUrl="" />
       </div>
 
       <div className="list-container__search-form">
