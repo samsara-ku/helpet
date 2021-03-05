@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
-import ShareBtn from '../../ShareBtn';
+import Share from '../../../Global/Share';
 import Tags from '../../Tag';
 import RelatedArticle from '../Related';
 import { heroku } from '../../../../env/apiurl.json';
@@ -99,7 +99,7 @@ function ArticleDetail({
           </button>
         </div>
         <div className="information__article-detail__btns__right">
-          <ShareBtn />
+          <Share />
         </div>
       </div>
 
