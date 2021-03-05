@@ -1,10 +1,13 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { heroku } from '../../../../env/apiurl.json';
 import ENV from '../../../../env/var.json';
 import './index.scss';
 
 function HiddenMenu({ cidx, visible }) {
+  const history = useHistory();
   const [menuList, setMenuList] = useState([]);
 
   useEffect(async () => {
@@ -47,20 +50,27 @@ function HiddenMenu({ cidx, visible }) {
         <div className="information__hidden-menu-article">
           {menuList
             ?.filter((_, pIdx) => pIdx < 3)
-            .map((e, i) => (
-              <Link to={`/articles/article/${e.aidx}`} key={i}>
-                <div className="information__hidden-menu-article__post">
-                  <div className="information__hidden-menu-article__post-col">
-                    <img src={e.thumbnail} alt="" />
-                  </div>
-                  <div className="information__hidden-menu-article__post-col">
-                    <div className="information__hidden-menu-article__post-title">{e.title}</div>
-                    <div className="information__hidden-menu-article__post-description">
-                      {e.summary}
-                    </div>
+            .map((elem, i) => (
+              <div
+                className="information__hidden-menu-article__post"
+                onClick={e => {
+                  e.stopPropagation();
+                  history.push(`/articles/article/${elem.aidx}`);
+                }}
+                role="button"
+                tabIndex={0}
+                key={i}
+              >
+                <div className="information__hidden-menu-article__post-col">
+                  <img src={elem.thumbnail} alt="" />
+                </div>
+                <div className="information__hidden-menu-article__post-col">
+                  <div className="information__hidden-menu-article__post-title">{elem.title}</div>
+                  <div className="information__hidden-menu-article__post-description">
+                    {elem.summary}
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
         </div>
       </div>
