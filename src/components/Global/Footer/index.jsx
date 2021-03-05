@@ -1,4 +1,4 @@
-import './Footer.scss';
+import './index.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FacebookIcon from '@material-ui/icons/Facebook';

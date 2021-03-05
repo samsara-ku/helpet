@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable import/no-extraneous-dependencies */
-import './Header.scss';
+import './index.scss';
 import _ from 'lodash';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import Portal from '../../Portal/Portal';
-import './Modal.scss';
+import './index.scss';
 
 function Modal({ isOpen, onClose, children }) {
   const background = useRef(null);

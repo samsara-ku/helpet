@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Header from './components/Global/Header/Header';
+import Header from './components/Global/Header';
 import Notfound from './components/Information/Notfound';
-import Footer from './components/Global/Footer/Footer';
+import Footer from './components/Global/Footer';
 import Main from './components/Landing/Main';
 import AdoptationIndex from './components/Adoptation/Index';
 import InformationIndex from './components/Information/index';
