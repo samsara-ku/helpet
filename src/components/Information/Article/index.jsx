@@ -7,7 +7,7 @@ function Article({ aidx, title, summary, thumbnail, insertDate }) {
     <Link to={`/articles/article/${aidx}`}>
       <div className="information__article">
         <div className="information__article__image-wrapper">
-          <img src={thumbnail} alt="no thumbnail" />
+          <img src={thumbnail} alt="thumbnail" />
         </div>
         <div className="information__article__info">
           <h4>{title}</h4>

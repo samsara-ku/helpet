@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HiddenMenu from './Hidden';
@@ -35,23 +35,25 @@ function Menu() {
         <div className="information__menu__col">
           <div
             className="information__menu__col__choice"
+            onClick={() => history.push('/articles/10/')}
             onMouseEnter={() => setHover([true, false])}
             onMouseLeave={() => {
               setHover([false, false]);
             }}
           >
-            <Link to="/articles/10">강아지 연구소</Link>
+            강아지 연구소
             <ArrowDropDownIcon />
             <HiddenMenu cidx={10} visible={hover[0]} />
           </div>
           <div
             className="information__menu__col__choice"
+            onClick={() => history.push('/articles/20/')}
             onMouseEnter={() => setHover([false, true])}
             onMouseLeave={() => {
               setHover([false, false]);
             }}
           >
-            <Link to="/articles/20">고양이 연구소</Link>
+            고양이 연구소
             <ArrowDropDownIcon />
             <HiddenMenu cidx={20} visible={hover[1]} />
           </div>

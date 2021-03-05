@@ -1,14 +1,14 @@
-import './RelatedArticle.scss';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import QueryBuilderIcon from '@material-ui/icons/QueryBuilder';
+import './index.scss';
 
-function RelatedArticle({ articleList }) {
+function RelatedArticle({ articles }) {
   return (
-    <div className="related-article border">
+    <div className="information__related-article border">
       <h4>관련 글</h4>
       <div>
-        {articleList.map((elem, idx) => (
+        {articles.map((elem, idx) => (
           <Link key={idx} to={`/articles/article/${elem.aidx}`}>
             <div>
               <div className="img-wrapper">

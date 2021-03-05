@@ -1,10 +1,13 @@
 /* eslint-disable react/no-danger */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
+import ArrowUpwardIcon from '@material-ui/icons/ArrowUpward';
 import ShareBtn from '../../ShareBtn';
 import Tags from '../../Tag';
-import RelatedArticle from '../../RelatedArticle';
+import RelatedArticle from '../Related';
 import { heroku } from '../../../../env/apiurl.json';
 import './index.scss';
 
@@ -18,15 +21,17 @@ function ArticleDetail({
   insertUidx,
   categoryCode,
 }) {
-  const [articlePreviewList, setArticlePreviewList] = useState([]);
+  const [relatedArticles, setRelatedArticles] = useState([]);
 
-  useEffect(async () => {
+  const handleButton = () => {
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: 'smooth',
     });
+  };
 
+  useEffect(async () => {
     const endpoint = `${heroku}/graphql`;
     const query = `
       {
@@ -48,7 +53,7 @@ function ArticleDetail({
       }).then(res => res.json())
     ).data.articlesv2;
 
-    setArticlePreviewList(result);
+    setRelatedArticles(result);
 
     const lazyImg = document.querySelectorAll('img');
 
@@ -73,34 +78,38 @@ function ArticleDetail({
   const _content = { __html: content };
 
   return (
-    <div className="article-detail border">
-      <div className="article-detail__breadcrumb">
+    <div className="information__article-detail border">
+      <div className="information__article-detail__breadcrumb">
         <HomeIcon />
         <span>
           {categoryCode} {countView} {insertDate} {updateDate} {insertUidx}
         </span>
       </div>
-      <div className="article-detail__title">
+      <div className="information__article-detail__title">
         <h1>{title}</h1>
       </div>
 
-      <div className="article-detail__content" dangerouslySetInnerHTML={_content} />
+      <div className="information__article-detail__content" dangerouslySetInnerHTML={_content} />
 
-      <div className="article-detail__btns">
-        <div className="article-detail__btns__left">
+      <div className="information__article-detail__btns">
+        <div className="information__article-detail__btns__left">
           <button type="button" onClick={console.log}>
             <ThumbUpIcon />
             <span>{countLike}</span>
           </button>
         </div>
-        <div className="article-detail__btns__right">
+        <div className="information__article-detail__btns__right">
           <ShareBtn />
         </div>
       </div>
 
       <Tags cidx={categoryCode} />
 
-      <RelatedArticle articleList={articlePreviewList} />
+      <RelatedArticle articles={relatedArticles} />
+
+      <div className="top-button" role="button" tabIndex={0} onClick={handleButton}>
+        <ArrowUpwardIcon />
+      </div>
     </div>
   );
 }
