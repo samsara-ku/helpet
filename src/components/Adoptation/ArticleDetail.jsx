@@ -5,8 +5,9 @@ import AdoptationLayout from './AdoptationLayout';
 import ArticleDetail2 from '../Information/Article/Detail';
 
 function ArticleDetail() {
-  const match = useRouteMatch();
-  const { aidx } = match.params;
+  const {
+    params: { aidx },
+  } = useRouteMatch();
 
   const [article, setArticle] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);

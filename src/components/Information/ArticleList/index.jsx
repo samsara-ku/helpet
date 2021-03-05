@@ -7,8 +7,9 @@ import ENV from '../../../env/var.json';
 import './index.scss';
 
 function ArticleList() {
-  const match = useRouteMatch();
-  const { cidx } = match.params;
+  const {
+    params: { cidx },
+  } = useRouteMatch();
   const [articlePreviewList, setArticlePreviewList] = useState([]);
 
   useEffect(async () => {

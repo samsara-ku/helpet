@@ -5,8 +5,9 @@ import ArticleDetail from '../components/Information/Article/Detail';
 import { heroku } from '../env/apiurl.json';
 
 const ArticlePageContainer = () => {
-  const match = useRouteMatch();
-  const { aidx } = match.params;
+  const {
+    params: { aidx },
+  } = useRouteMatch();
 
   const [article, setArticle] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
