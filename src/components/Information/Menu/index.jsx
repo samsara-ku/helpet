@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import CloudIcon from '@material-ui/icons/Cloud';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import HiddenMenu from './Hidden';
@@ -11,16 +11,8 @@ import { AuthActions } from '../../../hooks/useMyActions';
 import { heroku } from '../../../env/apiurl.json';
 import './index.scss';
 
-function Menu({ articles }) {
+function Menu() {
   const history = useHistory();
-
-  const makeCategory = prefix => [
-    `${prefix} 건강`,
-    `${prefix} 행동`,
-    `${prefix} 음식`,
-    `${prefix} 훈련`,
-    `${prefix} 종류`,
-  ];
 
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState([false, false]);
@@ -48,9 +40,9 @@ function Menu({ articles }) {
               setHover([false, false]);
             }}
           >
-            강아지 연구소
+            <Link to="/articles/10">강아지 연구소</Link>
             <ArrowDropDownIcon />
-            <HiddenMenu category={makeCategory('강아지')} articles={articles} visible={hover[0]} />
+            <HiddenMenu cidx={10} visible={hover[0]} />
           </div>
           <div
             className="information__menu__col__choice"
@@ -59,9 +51,9 @@ function Menu({ articles }) {
               setHover([false, false]);
             }}
           >
-            고양이 연구소
+            <Link to="/articles/20">고양이 연구소</Link>
             <ArrowDropDownIcon />
-            <HiddenMenu category={makeCategory('고양이')} articles={articles} visible={hover[1]} />
+            <HiddenMenu cidx={20} visible={hover[1]} />
           </div>
 
           {auth.uidx ? (

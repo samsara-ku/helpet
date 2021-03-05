@@ -50,11 +50,11 @@ function Index() {
           <Home />
         </Route>
 
-        <Route exact path="/articles">
+        <Route exact path="/articles/:cidx">
           <Articles />
         </Route>
 
-        <Route path="/articles/article/:aidx">
+        <Route exact path="/articles/article/:aidx">
           <ArticlePageContainer />
         </Route>
 

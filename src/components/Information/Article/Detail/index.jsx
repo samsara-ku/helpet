@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import HomeIcon from '@material-ui/icons/Home';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import ShareBtn from '../../ShareBtn';
-import Tags from '../../Tags';
+import Tags from '../../Tag';
 import RelatedArticle from '../../RelatedArticle';
 import { heroku } from '../../../../env/apiurl.json';
 import './index.scss';
@@ -40,8 +40,6 @@ function ArticleDetail({
       }
       `;
 
-    // fetch 로 graphql 요청 보내기
-    // 결과로 받는 객체 data.{쿼리객체명} 을 적으면 결과를 꺼낼 수 있음.
     const result = (
       await fetch(endpoint, {
         method: 'POST',
@@ -100,7 +98,7 @@ function ArticleDetail({
         </div>
       </div>
 
-      <Tags />
+      <Tags cidx={categoryCode} />
 
       <RelatedArticle articleList={articlePreviewList} />
     </div>

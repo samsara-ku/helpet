@@ -1,21 +1,52 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { heroku } from '../../../../env/apiurl.json';
+import ENV from '../../../../env/var.json';
 import './index.scss';
 
-function HiddenMenu({ category, articles, visible }) {
+function HiddenMenu({ cidx, visible }) {
+  const [menuList, setMenuList] = useState([]);
+
+  useEffect(async () => {
+    const endpoint = `${heroku}/graphql`;
+    const query = `
+    {
+      articlesv2(category_code: "${cidx}") {
+          aidx,
+          title,
+          summary,
+          thumbnail,
+          insert_date
+        },
+    }
+    `;
+
+    const result = (
+      await fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query }),
+      }).then(res => res.json())
+    ).data.articlesv2;
+
+    setMenuList(result);
+  }, []);
+
   return (
     <div className={`information__hidden-menu${visible ? ' visible' : ''}`}>
       <div className="information__hidden-menu__row">
         <ul className="information__hidden-menu-category">
-          {category.map((e, i) => (
+          {['건강', '행동', '음식', '훈련', '종류'].map((e, i) => (
             <li className="information__hidden-menu-category__choice" key={i}>
-              <Link to="/articles/">{e}</Link>
+              <Link to={`/articles/${cidx}`}>
+                {ENV[cidx]} {e}
+              </Link>
             </li>
           ))}
         </ul>
         <div className="information__hidden-menu-article">
-          {articles
-            ?.filter((post, pIdx) => pIdx < 3)
+          {menuList
+            ?.filter((_, pIdx) => pIdx < 3)
             .map((e, i) => (
               <Link to={`/articles/article/${e.aidx}`} key={i}>
                 <div className="information__hidden-menu-article__post">
