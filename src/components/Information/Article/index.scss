@@ -1,0 +1,56 @@
+.information__article {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  max-height: 250px;
+  margin-bottom: 20px;
+
+  &__image-wrapper {
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      background-color: gray;
+      border-radius: 2px;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    overflow: hidden;
+    line-height: 27px;
+    text-overflow: ellipsis;
+
+    > h4 {
+      max-height: 30px;
+      overflow: hidden;
+      text-overflow: inherit;
+      line-break: anywhere;
+    }
+
+    > p {
+      text-overflow: ellipsis;
+      overflow-wrap: anywhere;
+    }
+
+    &__tags {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 0;
+    }
+
+    &__tag {
+      padding: 10px 20px;
+      background-color: gray;
+
+      &::before {
+        display: inline-block;
+        margin: 0 3px 0 5px;
+        content: "#";
+      }
+    }
+  }
+}

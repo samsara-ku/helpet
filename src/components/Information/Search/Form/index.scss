@@ -1,0 +1,29 @@
+@import "../../../Common/variables";
+
+.information__search-form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: white;
+
+  input {
+    flex: 1;
+    height: 45px;
+    padding: 10px;
+    padding-left: 31px;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+  }
+
+  button {
+    padding: 5px;
+    background-color: $mainColor;
+  }
+
+  button svg {
+    font-size: xx-large;
+  }
+}

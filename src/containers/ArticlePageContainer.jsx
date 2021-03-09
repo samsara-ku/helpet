@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useRouteMatch } from 'react-router-dom';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import ArticleDetail from '../components/Information/ArticleDetail';
-import Layout1 from '../components/Information/Layout1';
+import ArticleDetail from '../components/Information/Article/Detail';
 import { heroku } from '../env/apiurl.json';
 
 const ArticlePageContainer = () => {
-  const match = useRouteMatch();
-  const { aidx } = match.params;
+  const {
+    params: { aidx },
+  } = useRouteMatch();
 
   const [article, setArticle] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
@@ -57,19 +57,15 @@ const ArticlePageContainer = () => {
   } = article;
 
   return isLoaded ? (
-    <Layout1
-      mainContent={
-        <ArticleDetail
-          title={title}
-          content={content}
-          countView={countView}
-          countLike={countLike}
-          insertDate={insertDate.slice(0, 10)}
-          updateDate={updateDate}
-          insertUidx={insertUidx}
-          categoryCode={categoryCode}
-        />
-      }
+    <ArticleDetail
+      title={title}
+      content={content}
+      countView={countView}
+      countLike={countLike}
+      insertDate={insertDate.slice(0, 10)}
+      updateDate={updateDate}
+      insertUidx={insertUidx}
+      categoryCode={categoryCode}
     />
   ) : (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flex: 1 }}>

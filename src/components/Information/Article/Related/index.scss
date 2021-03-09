@@ -1,0 +1,55 @@
+@import "../../../Common/variables";
+
+.information__related-article {
+  padding: 30px;
+
+  > h4 {
+    margin-bottom: 20px;
+  }
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+
+    > a > div {
+      display: flex;
+      flex-direction: column;
+      width: 320px;
+      margin-bottom: 20px;
+
+      .img-wrapper {
+        overflow: hidden;
+        border-radius: 2px;
+
+        > img {
+          max-width: 100%;
+          height: auto;
+          background-color: gray;
+        }
+      }
+
+      .title {
+        margin: 3px 0;
+        overflow: hidden;
+        font-weight: 600;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+
+      .time {
+        display: flex;
+        align-items: center;
+        margin: 3px 0;
+        color: $grayColor;
+        font-size: small;
+
+        > svg {
+          margin: 0 5px;
+          font-size: inherit;
+        }
+      }
+    }
+  }
+}

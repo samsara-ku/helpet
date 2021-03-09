@@ -1,0 +1,96 @@
+@import "../../Common/variables";
+
+.sign-in {
+  position: relative;
+  display: flex;
+
+  &-col {
+    min-width: 360px;
+    min-height: 460px;
+    padding: 30px;
+  }
+
+  &__login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    height: 100%;
+
+    div {
+      display: flex;
+      justify-content: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 15px;
+      background-color: #eee;
+      border: none;
+    }
+
+    &-close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    &-title {
+      font-weight: 800;
+      font-size: 30px;
+    }
+
+    &-register {
+      display: flex;
+      gap: 15px;
+      margin: 20px 0 25px 0;
+
+      svg {
+        font-size: 30px;
+        cursor: pointer;
+        transition: 0.25s ease;
+
+        &:first-child {
+          &:hover {
+            color: #3b5998;
+          }
+        }
+
+        &:last-child {
+          &:hover {
+            color: #00acee;
+          }
+        }
+      }
+    }
+
+    &-forgot {
+      margin: 10px 0;
+      font-size: 14px;
+
+      u {
+        cursor: pointer;
+      }
+    }
+
+    &-msg {
+      color: red;
+      font-size: small;
+    }
+
+    &-button {
+      button {
+        padding: 12px 45px;
+        color: #ffffff;
+        font-weight: 800;
+        font-size: 12px;
+        letter-spacing: 1px;
+        background-color: #ff4b2b;
+        border: none;
+        border-radius: 20px;
+        transition: transform 80ms ease-in;
+      }
+    }
+  }
+}

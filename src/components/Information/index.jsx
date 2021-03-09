@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
-import Home from './Home';
-import Articles from './Articles';
+import Home from './Home/index';
+import Articles from './ArticleList';
 import ArticlePageContainer from '../../containers/ArticlePageContainer';
 import QnA from './QnA';
 import Menu from './Menu';
@@ -50,11 +50,11 @@ function Index() {
           <Home />
         </Route>
 
-        <Route exact path="/articles">
+        <Route exact path="/articles/:cidx">
           <Articles />
         </Route>
 
-        <Route path="/articles/article/:aidx">
+        <Route exact path="/articles/article/:aidx">
           <ArticlePageContainer />
         </Route>
 

@@ -1,0 +1,19 @@
+.information__tags {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 0;
+
+  &__tag {
+    padding: 5px 4px;
+    font-size: small;
+    background-color: #eaeaea66;
+
+    &::before {
+      display: inline-block;
+      margin: 0 3px 0 5px;
+      content: "#";
+    }
+  }
+}

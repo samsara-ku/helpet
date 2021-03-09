@@ -1,0 +1,35 @@
+$colors: #3b5998, #00acee;
+
+.share {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .share-option {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+
+    a {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      @for $i from 1 to 3 {
+        &:nth-of-type(#{$i}) {
+          transition: all 0.25s ease;
+
+          &:hover {
+            color: nth($colors, $i);
+          }
+        }
+      }
+    }
+  }
+}

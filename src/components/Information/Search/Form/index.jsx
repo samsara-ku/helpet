@@ -1,0 +1,22 @@
+/* eslint-disable react/prop-types */
+import React from 'react';
+import SearchIcon from '@material-ui/icons/Search';
+import './index.scss';
+
+function SearchForm({ onClick, onFocusInput, onBlurInput }) {
+  return (
+    <div className="information__search-form">
+      <input
+        type="text"
+        placeholder="궁금한게 있나요? 검색해주세요"
+        onFocus={onFocusInput}
+        onBlur={onBlurInput}
+      />
+      <button type="button" onClick={onClick}>
+        <SearchIcon />
+      </button>
+    </div>
+  );
+}
+
+export default SearchForm;

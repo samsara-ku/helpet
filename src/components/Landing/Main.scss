@@ -1,4 +1,4 @@
-@import "../Information/variables";
+@import "../Common/variables";
 
 $stroke: 544.78, 525.23, 328.92, 482.58, 525.23, 363.09;
 $time: 0s, 0.3s, 0.6s, 0.9s, 1.2s, 1.5s;
@@ -10,23 +10,23 @@ $image: "",
 .main {
   &__header {
     display: flex;
-    justify-content: space-between;
-    font-weight: 600;
-    padding: 15px 40px;
     gap: 10px;
+    justify-content: space-between;
+    padding: 15px 40px;
+    font-weight: 600;
 
     &-col {
       display: flex;
-      justify-content: center;
-      align-items: center;
       gap: 20px;
+      align-items: center;
+      justify-content: center;
     }
 
     &-choice {
       display: flex;
       padding: 15px 20px;
-      transition: 0.25s ease;
       cursor: pointer;
+      transition: 0.25s ease;
 
       &:hover {
         color: $mainColor;
@@ -38,15 +38,15 @@ $image: "",
     &-row {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background-color: $mainColor;
+      justify-content: center;
       padding: 100px 0;
+      background-color: $mainColor;
 
       &:nth-child(1) {
         .concept {
-          font-size: 32px;
           padding: 60px 0 20px;
+          font-size: 32px;
         }
         .description {
           line-height: 24px;
@@ -55,17 +55,17 @@ $image: "",
 
       @for $i from 2 through 4 {
         &:nth-child(#{$i}) {
-          height: 600px;
           justify-content: start;
+          height: 600px;
           padding: 0 100px;
-          box-shadow: 0 0 10px 0 rgba(107, 107, 107, 0.5);
           background-color: white;
+          box-shadow: 0 0 10px 0 rgba(107, 107, 107, 0.5);
 
           &::before {
-            content: "";
             width: 300px;
             height: 100%;
             background: no-repeat center/100% url(nth($image, $i));
+            content: "";
           }
 
           @if $i % 2 == 0 {
@@ -80,14 +80,14 @@ $image: "",
     &-col {
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
       gap: 20px;
+      align-items: flex-start;
       padding: 50px;
       color: #54595f;
 
       .title {
-        font-size: 40px;
         font-weight: 800;
+        font-size: 40px;
       }
 
       .description {
@@ -96,9 +96,9 @@ $image: "",
 
       .button {
         padding: 20px 50px;
-        border-radius: 30px;
         color: black;
         background-color: $mainColor;
+        border-radius: 30px;
         cursor: pointer;
         transition: 0.25s ease;
 
@@ -113,9 +113,9 @@ $image: "",
 
       @for $i from 1 through 6 {
         & path:nth-child(#{$i}) {
+          animation: draw 2s ease forwards nth($time, $i);
           stroke-dasharray: nth($stroke, $i);
           stroke-dashoffset: nth($stroke, $i);
-          animation: draw 2s ease forwards nth($time, $i);
         }
       }
     }
